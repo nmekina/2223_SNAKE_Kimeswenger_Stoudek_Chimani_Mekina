@@ -25,22 +25,21 @@ public class StartmenueController {
     public Button settingsbutton;
     public ColorPicker colourpicker;
 
-    ArrayList<String> list1=new ArrayList<>();
-    ObservableList<Integer> list = FXCollections.observableArrayList(1, 2, 3);
+    ArrayList<String> list=new ArrayList<>();
+
 
     public ChoiceBox savedplayersc;
 
-    public void initialize() {
+    public void initialize() throws IOException {
 
-        for (String oneplayer : allplayers) {
-            choicebox_username.getItems().add(oneplayer);
+        for (String oneplayer : list) {
+            savedplayersc.getItems().add(oneplayer);
         }
         addSpieler();
 
     }
-
     public void settingsbuttonclicked(ActionEvent actionEvent) {
-        list1.add(nameinput.getText());
+        list.add(nameinput.getText());
     }
     public void addSpieler() throws IOException {
         File file = new File("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
@@ -51,7 +50,7 @@ public class StartmenueController {
         for (int z = 0; z < json.length(); z++) {
             JSONObject getplayer = json.getJSONObject(z);
             String player = getplayer.getString("name");
-            allplayers.add(player);
+            list.add(player);
         }
     }
 }
