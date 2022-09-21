@@ -1,44 +1,68 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
-import javafx.event.EventHandler;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
 import javafx.fxml.FXML;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.PointLight;
+import javafx.scene.control.Label;
+import javafx.scene.layout.ColumnConstraints;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
-
-import java.util.EventListener;
+import javafx.scene.layout.RowConstraints;
 
 
 public class PlayfieldController {
 
-    private static final int ROW_NR = 20;
-    private static final int COL_NR = 25;
+    public static final int ROW_NR = 25;
+    public static final int COL_NR = 20;
     @FXML
-    GridPane playfield = new GridPane();
+    public GridPane playfield = new GridPane();
 
-    /**@author lstoudek
-     *  initialisiert das Spielfeld
+    Playfield pf = new Playfield();
+
+    int xPos;
+    int yPos;
+
+    /**
+     * @author lstoudek
      */
-    public PlayfieldController(){
-        for (int i = 0; i < ROW_NR; i++){
-            for (int j = 0; j < COL_NR; j++){
-                Pane pane = new Pane();
-                pane.setStyle("-fx-border-color: black; -fx-border-width: 2px");
-                playfield.add(pane, i, j);
-                System.out.println(pane + "\t" + i + "\t" + j);
-                playfield.setOnMouseClicked(myEventhandler);
+    public void initialize() {
+        placeFood();
+    /*
+ if (playfield != null) {
+            for (int i = 0; i < ROW_NR; i++) {
+                playfield.getRowConstraints().add(new RowConstraints());
+            } for (int j = 0; j < COL_NR; j++) {
+                playfield.getColumnConstraints().add(new ColumnConstraints());
+                for (int j = 0; j < COL_NR; j++) {
+                    Pane pane = new Pane();
+                    pane.setPrefHeight(20);
+                    pane.setPrefWidth(20);
+                    pane.setStyle("-fx-border-color: black; -fx-border-width: 2px;");
+                    playfield.add(pane, i, j);
+                    System.out.println(pane + "\t" + i + "\t" + j);
+                }
             }
+            ColumnConstraints col1 = new ColumnConstraints();
+            col1.setPrefWidth(20);
+            playfield.getColumnConstraints().addAll(col1);
+            System.out.println("aef");
         }
-        System.out.println("aef");
+
+     */
     }
 
-    EventHandler<MouseEvent> myEventhandler = new EventHandler<MouseEvent>(){
-
-        @Override
-        public void handle(MouseEvent mouseEvent) {
-            System.out.println("asdf");
-        }
-    };
-
-
+    /**
+     * @author skimeswe
+     * diese Methode plaziert an zufälligen Stellen einen Apfel (Futter)
+     */
+    public void placeFood() {
+        Position position = pf.randomFood();
+        Image image = new Image("File:images/apple.png");
+        playfield.add(new ImageView(image), position.getX(), position.getY());
+        System.out.println("x: " + position.getX() + " y: " + position.getY());
+    }
 }
