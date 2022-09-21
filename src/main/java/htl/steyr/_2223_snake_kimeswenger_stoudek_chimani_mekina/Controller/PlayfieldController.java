@@ -2,8 +2,10 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
+import javafx.scene.layout.RowConstraints;
 
 
 public class PlayfieldController {
@@ -20,13 +22,9 @@ public class PlayfieldController {
     public void initialize() {
         if (playfield != null) {
             for (int i = 0; i < ROW_NR; i++) {
-                for (int j = 0; j < COL_NR; j++) {
-                    Pane pane = new Pane();
-                    pane.setPrefHeight(20);
-                    pane.setPrefWidth(20);
-                    playfield.add(pane, i, j);
-                    System.out.println(pane + "\t" + i + "\t" + j);
-                }
+                playfield.getRowConstraints().add(new RowConstraints());
+            } for (int j = 0; j < COL_NR; j++) {
+                playfield.getColumnConstraints().add(new ColumnConstraints());
             }
             System.out.println("aef");
         }
