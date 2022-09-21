@@ -7,7 +7,7 @@
 
 <AnchorPane prefHeight="499.0" prefWidth="803.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.PlayfieldController">
    <children>
-      <GridPane fx:id="playfield" layoutX="-2.0" prefHeight="104.0" prefWidth="216.0" styleClass="playfield" stylesheets="@../../../../../lib/PlayfieldStyle.css">
+      <GridPane fx:id="playfield" layoutX="-2.0" prefHeight="104.0" prefWidth="216.0" styleClass="playfield" stylesheets="@PlayfieldStyle.css">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
