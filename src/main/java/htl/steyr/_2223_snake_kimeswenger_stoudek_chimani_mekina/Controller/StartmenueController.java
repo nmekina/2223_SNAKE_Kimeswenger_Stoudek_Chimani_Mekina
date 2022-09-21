@@ -23,11 +23,11 @@ public class StartmenueController {
 
     public ChoiceBox savedplayersc;
 
-    public void initialize() {
+    /*public void initialize() {
         savedplayersc.setItems( list);
 
 
-    }
+    }*/
 
     public void settingsbuttonclicked(ActionEvent actionEvent) {
         list.add(nameinput.getText());
