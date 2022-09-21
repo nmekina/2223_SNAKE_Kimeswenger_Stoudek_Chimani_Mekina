@@ -1,0 +1,6 @@
+.playfield{
+    -fx-background-color: lightgrey;
+    -fx-border-color: black;
+    -fx-border-width: 8px;
+    -fx-grid-lines-visible: true;
+}
