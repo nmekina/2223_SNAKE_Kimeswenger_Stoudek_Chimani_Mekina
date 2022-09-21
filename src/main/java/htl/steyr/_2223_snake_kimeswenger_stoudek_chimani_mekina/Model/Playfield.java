@@ -8,24 +8,18 @@ public class Playfield {
     private int foodY;
 
 
-    private void randomFood() {
-        while (true) {
+    public Position randomFood() {
             foodX = (int) (Math.random() * PlayfieldController.ROW_NR);
             foodY = (int) (Math.random() * PlayfieldController.COL_NR);
-        }
+        return new Position(foodX, foodY);
     }
 
-    public int getFoodX() {
-        return foodX;
-    }
+
 
     public void setFoodX(int foodX) {
         this.foodX = foodX;
     }
 
-    public int getFoodY() {
-        return foodY;
-    }
 
     public void setFoodY(int foodY) {
         this.foodY = foodY;

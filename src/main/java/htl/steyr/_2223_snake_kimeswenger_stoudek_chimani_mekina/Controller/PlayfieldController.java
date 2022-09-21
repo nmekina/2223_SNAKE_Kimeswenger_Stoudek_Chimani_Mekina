@@ -1,7 +1,9 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
 import javafx.fxml.FXML;
+import javafx.scene.PointLight;
 import javafx.scene.control.Label;
 import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.image.Image;
@@ -24,7 +26,11 @@ public class PlayfieldController {
     int xPos;
     int yPos;
 
-
+    /**
+     * @author lstoudek
+     */
+    public void initialize() {
+        placeFood();
     /*
  if (playfield != null) {
             for (int i = 0; i < ROW_NR; i++) {
@@ -47,17 +53,6 @@ public class PlayfieldController {
         }
 
      */
-
-    /**
-     * @author lstoudek
-     */
-    public PlayfieldController() {
-        Pane pane = new Pane();
-        pane.setMaxHeight(1);
-        pane.setMaxWidth(1);
-        pane.getChildren().add(new Label("seffe"));
-        playfield.add(pane, 0, 0);
-        placeFood();
     }
 
     /**
@@ -65,11 +60,9 @@ public class PlayfieldController {
      * diese Methode plaziert an zufälligen Stellen einen Apfel (Futter)
      */
     public void placeFood() {
-
-        xPos = pf.getFoodX();
-        yPos = pf.getFoodY();
+        Position position = pf.randomFood();
         Image image = new Image("File:images/apple.png");
-        playfield.add(new ImageView(image), xPos, yPos);
-        System.out.println("x: " + xPos + " y: " + yPos);
+        playfield.add(new ImageView(image), position.getX(), position.getY());
+        System.out.println("x: " + position.getX() + " y: " + position.getY());
     }
 }
