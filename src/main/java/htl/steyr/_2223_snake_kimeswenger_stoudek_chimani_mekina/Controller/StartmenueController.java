@@ -1,17 +1,27 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
+
+import com.google.gson.JsonParser;
+import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Player;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import javafx.stage.Stage;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
 
 import java.io.*;
 import java.lang.reflect.Type;
+import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
@@ -25,7 +35,9 @@ public class StartmenueController {
     public ChoiceBox<String> whichFood;
     private String png;
 
-    ArrayList<String> list=new ArrayList<>();
+    private static FileWriter fw;
+
+    ArrayList<String> list = new ArrayList<>();
 
     public String getWhichFood() {
         return png;
@@ -47,7 +59,10 @@ public class StartmenueController {
         whichFood.getItems().add("apple");
         whichFood.getItems().add("banana");
 
+
+
     }
+
     public void addSpieler() throws IOException {
         File file = new File("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
         String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
@@ -68,65 +83,47 @@ public class StartmenueController {
 
         System.out.println(png);
 
-        if(nameinput.getText().equals("")){
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Ungueltiger Player ");
-            alert.setHeaderText(null);
-            alert.setContentText("Ungueltiger Player:\n");
+        if (nameinput.getText().equals("")) {
+            if (nameinput.getText().equals("")) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Ungueltiger Player ");
+                alert.setHeaderText(null);
+                alert.setContentText("Ungueltiger Player:\n");
 
-            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
-            alert.showAndWait();
-        }else {
-            Player p = new Player();
-            p.setName(nameinput.getText());
-            p.setGames(1);
-            p.setHighscore(1);
-            addnewplayer(p);
-        }
-    }
-    public void addnewplayer(Player pe) throws IOException {
-        Boolean check = true;
-        File f = new File("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
-        Scanner s = new Scanner(f);
-        FileReader fr = new FileReader(f);
-        StringBuilder sb = new StringBuilder();
-
-        while (s.hasNextLine()) {
-            sb.append(s.nextLine());
-        }
-        Gson g = new Gson();
-
-        Type listType = new TypeToken<ArrayList<Player>>() {
-        }.getType();
-        ArrayList<Player> player = g.fromJson(fr, listType);
-
-
-        Iterator<Player> i = player.iterator();
-
-        int count = 0;
-        while (i.hasNext()) {
-            count++;
-            Player p = i.next();
-            if (pe.equals(p.getName())) {
-                check = false;
-                pe.setGames(pe.getGames()+1);
-
-
+                alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                alert.showAndWait();
+            } else {
+                Player p = new Player();
+                p.setName(nameinput.getText());
+                p.setGames(1);
+                p.setHighscore(1);
+                addnewplayer(p);
             }
         }
 
-        if (check) {
-            Player playerScore = new Player();
-
-
-            playerScore.setName(pe.getName());
-            playerScore.setHighscore(pe.getHighscore());
-            playerScore.setGames(pe.getGames());
-            player.add(playerScore);
-        }
-        FileWriter fw = new FileWriter(f);
-        g.toJson(player, fw);
-        fw.close();
     }
+
+    public void addnewplayer(Player p) throws IOException {
+
+
+        JsonParser parser = new JsonParser();
+        JSONObject obj = new JSONObject();
+        obj.append("name", p.getName());
+        obj.append("games", p.getName());
+        obj.append("highscore", p.getHighscore());
+        Gson g = new Gson();
+
+
+        JsonArray a = (JsonArray) parser.parse(new FileReader("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json"));   // reading the file and creating a json array of it.
+
+        a.add(String.valueOf(obj));   // adding your created object into the array
+
+        fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
+        fw.write(String.valueOf(a));
+        fw.close();
+
+
+        }
+
     }
 

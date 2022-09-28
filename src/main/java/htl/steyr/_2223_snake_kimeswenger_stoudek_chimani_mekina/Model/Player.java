@@ -1,10 +1,10 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 
 public class Player {
-    private static String name;
-    private static Integer highscore;
+    public static String name;
+    public static Integer highscore;
 
-    private static Integer games;
+    public static Integer games;
 
     public String getName() {
         return name;

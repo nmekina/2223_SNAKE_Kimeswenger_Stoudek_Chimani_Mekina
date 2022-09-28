@@ -4,13 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="80f5207b-2ed9-4165-a7a6-7733de1676ed" name="Changes" comment="place fertig">
-      <change afterPath="$PROJECT_DIR$/images/banana.png" afterDir="false" />
+    <list default="true" id="80f5207b-2ed9-4165-a7a6-7733de1676ed" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/PlayfieldController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/PlayfieldController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/StartmenueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/StartmenueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Startmenue.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Startmenue.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,14 +45,29 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/simon/Desktop/Simon/HTL4ahitn/SEW/2223_SNAKE_Kimeswenger_Stoudek_Chimani_Mekina/images&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/simon/Desktop/Simon/HTL4ahitn/SEW/2223_SNAKE_Kimeswenger_Stoudek_Chimani_Mekina/src/lib&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  &lt;component name=&quot;PropertiesComponent&quot;&gt;{
+  &amp;quot;keyToString&amp;quot;: {
+    &amp;quot;ASKED_ADD_EXTERNAL_FILES&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.OpenProjectViewOnStart&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;RunOnceActivity.ShowReadmeOnStart&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;SHARE_PROJECT_CONFIGURATION_FILES&amp;quot;: &amp;quot;true&amp;quot;,
+    &amp;quot;WebServerToolWindowFactoryState&amp;quot;: &amp;quot;false&amp;quot;,
+    &amp;quot;last_opened_file_path&amp;quot;: &amp;quot;C:/Users/simon/Desktop/Simon/HTL4ahitn/SEW/2223_SNAKE_Kimeswenger_Stoudek_Chimani_Mekina/images&amp;quot;,
+    &amp;quot;project.structure.last.edited&amp;quot;: &amp;quot;Libraries&amp;quot;,
+    &amp;quot;project.structure.proportion&amp;quot;: &amp;quot;0.15&amp;quot;,
+    &amp;quot;project.structure.side.proportion&amp;quot;: &amp;quot;0.2&amp;quot;
   }
 }</component>
   <component name="RecentsManager">
@@ -162,12 +174,12 @@
       <option name="project" value="LOCAL" />
       <updated>1663752556372</updated>
     </task>
-    <task id="LOCAL-00009" summary="place fertig">
-      <created>1664346637837</created>
+    <task id="LOCAL-00009" summary="gson">
+      <created>1664346872283</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1664346637837</updated>
+      <updated>1664346872283</updated>
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
@@ -188,11 +200,11 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="gson" />
     <MESSAGE value="Musik Kahoot" />
     <MESSAGE value="pictures" />
     <MESSAGE value="place" />
     <MESSAGE value="place fertig" />
-    <option name="LAST_COMMIT_MESSAGE" value="place fertig" />
+    <MESSAGE value="gson" />
+    <option name="LAST_COMMIT_MESSAGE" value="gson" />
   </component>
 </project>
