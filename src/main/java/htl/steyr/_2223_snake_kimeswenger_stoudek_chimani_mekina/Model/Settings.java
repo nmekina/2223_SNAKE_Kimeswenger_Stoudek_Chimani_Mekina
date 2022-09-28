@@ -3,7 +3,7 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 public class Settings {
     private int difficulty = 1;
     private boolean music = true;
-    private int volume = 50;
+    private float volume = 50;
 
     public int getDifficulty() {
         return difficulty;
@@ -13,7 +13,7 @@ public class Settings {
         this.difficulty = difficulty;
     }
 
-    public boolean isMusic() {
+    public boolean getMusic() {
         return music;
     }
 
@@ -21,11 +21,11 @@ public class Settings {
         this.music = music;
     }
 
-    public int getVolume() {
+    public float getVolume() {
         return volume;
     }
 
-    public void setVolume(int volume) {
+    public void setVolume(Float volume) {
         this.volume = volume;
     }
 }

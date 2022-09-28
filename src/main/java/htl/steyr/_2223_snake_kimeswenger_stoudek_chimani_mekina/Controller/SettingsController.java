@@ -86,7 +86,29 @@ public class SettingsController {
     }
 
     private void save() {
-        //System.out.println(rb_difficulty.getSelectedToggle().getUserData().toString());
-        //settings.setDifficulty();
+        savedifficulty();
+        savemusic();
+        savevalume();
+    }
+
+    private void savedifficulty() {
+        RadioButton selecteddifficulty = (RadioButton) rb_difficulty.getSelectedToggle();
+        int difficultyValue = Integer.parseInt(selecteddifficulty.getText());
+        settings.setDifficulty(difficultyValue);
+    }
+
+    private void savemusic() {
+        RadioButton selectedmusic = (RadioButton) rb_music.getSelectedToggle();
+        String musicValue = selectedmusic.getText();
+        if (musicValue.equals("off")) {
+            settings.setMusic(false);
+        } else {
+            settings.setMusic(true);
+        }
+    }
+
+    private void savevalume() {
+        Float sliderValue = Float.valueOf(String.valueOf(slider_volume.getValue()));
+        settings.setVolume(sliderValue);
     }
 }
