@@ -112,9 +112,8 @@ public class StartmenueController {
 
 
     }
-    
-    public void addnewplayer(Player p) throws IOException {
 
+    public void addnewplayer(Player p) throws IOException {
 
         JsonParser parser = new JsonParser();
         JSONObject obj = new JSONObject();
@@ -127,10 +126,11 @@ public class StartmenueController {
         JsonArray a = (JsonArray) parser.parse(new FileReader("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json"));   // reading the file and creating a json array of it.
 
         a.add(String.valueOf(obj));   // adding your created object into the array
+        JSONObject ob = new JSONObject();
 
-        fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
-        fw.write(String.valueOf(a));
-        fw.close();
+       // fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
+        // fw.write(String.valueOf(a));
+        //fw.close();
 
 
         }

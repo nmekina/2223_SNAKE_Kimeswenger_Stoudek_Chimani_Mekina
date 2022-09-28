@@ -7,7 +7,6 @@
     <list default="true" id="80f5207b-2ed9-4165-a7a6-7733de1676ed" name="Changes" comment="gson">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/StartmenueController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Controller/StartmenueController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,7 +187,14 @@
       <option name="project" value="LOCAL" />
       <updated>1664355930044</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="gson">
+      <created>1664357328942</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1664357328942</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
