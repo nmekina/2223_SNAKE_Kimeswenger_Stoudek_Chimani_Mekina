@@ -6,15 +6,20 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonParser;
 import com.google.gson.JsonArray;
 import com.google.gson.reflect.TypeToken;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.ChangeScene;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Player;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -78,10 +83,18 @@ public class StartmenueController {
 
 
     public void submitbtn(ActionEvent actionEvent) throws IOException {
+        System.out.println("aa");
+
+        Player p = new Player();
+        p.setName(nameinput.getText());
+        p.setGames(1);
+        p.setHighscore(1);
+        addnewplayer(p);
+        ChangeScene.ChangeSceneNow("playfield", settingsbutton);
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
         getWhichFood();
-
         System.out.println(png);
+        System.out.println("bb");
 
         if (nameinput.getText().equals("")) {
             if (nameinput.getText().equals("")) {
@@ -92,17 +105,14 @@ public class StartmenueController {
 
                 alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                 alert.showAndWait();
-            } else {
-                Player p = new Player();
-                p.setName(nameinput.getText());
-                p.setGames(1);
-                p.setHighscore(1);
-                addnewplayer(p);
             }
+
         }
 
-    }
 
+
+    }
+    
     public void addnewplayer(Player p) throws IOException {
 
 
