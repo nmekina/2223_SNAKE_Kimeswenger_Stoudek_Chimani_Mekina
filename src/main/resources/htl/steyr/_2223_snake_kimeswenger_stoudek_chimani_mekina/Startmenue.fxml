@@ -10,7 +10,7 @@
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.StartmenueController">
    <children>
       <TextArea fx:id="nameinput" layoutX="14.0" layoutY="271.0" prefHeight="39.0" prefWidth="162.0" promptText="new Player" />
-      <Button fx:id="settingsbutton" layoutX="209.0" layoutY="278.0" mnemonicParsing="false" text="submit" />
+      <Button fx:id="settingsbutton" layoutX="209.0" layoutY="278.0" mnemonicParsing="false" onAction="#submitbtn" text="submit" />
       <ColorPicker fx:id="colourpicker" layoutX="78.0" layoutY="102.0" />
       <Label layoutX="81.0" layoutY="71.0" text="Snake Colour" />
       <ChoiceBox fx:id="savedplayersc" layoutX="70.0" layoutY="215.0" prefWidth="150.0" />
