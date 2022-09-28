@@ -61,7 +61,7 @@ public class PlayfieldController {
      */
     public void placeFood() {
         Position position = pf.randomFood();
-        Image image = new Image("File:images/apple.png");
+        Image image = new Image("File:images/apple.png",20,20,false,false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
         System.out.println("x: " + position.getX() + " y: " + position.getY());
     }
