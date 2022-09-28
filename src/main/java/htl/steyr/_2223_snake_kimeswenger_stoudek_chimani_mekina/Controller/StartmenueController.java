@@ -3,12 +3,8 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Player;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Region;
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,27 +16,36 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.Objects;
 import java.util.Scanner;
-import java.util.jar.Attributes;
 
 public class StartmenueController {
     public TextArea nameinput;
     public Button settingsbutton;
     public ColorPicker colourpicker;
+    public ChoiceBox<String> whichFood;
+    private String png;
 
     ArrayList<String> list=new ArrayList<>();
 
+    public String getWhichFood() {
+        return png;
+    }
 
-    public ChoiceBox savedplayersc;
 
+    public ChoiceBox<String> savedplayersc;
+
+    /**
+     * @author skimeswe
+     * change Food (apple, banana)
+     * @throws IOException
+     */
     public void initialize() throws IOException {
         addSpieler();
         for (String oneplayer : list) {
             savedplayersc.getItems().add(oneplayer);
         }
-
-
+        whichFood.getItems().add("apple");
+        whichFood.getItems().add("banana");
 
     }
     public void addSpieler() throws IOException {
@@ -56,7 +61,13 @@ public class StartmenueController {
         }
     }
 
+
     public void submitbtn(ActionEvent actionEvent) throws IOException {
+        png = whichFood.getSelectionModel().getSelectedItem() + ".png";
+        getWhichFood();
+
+        System.out.println(png);
+
         if(nameinput.getText().equals("")){
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Ungueltiger Player ");
