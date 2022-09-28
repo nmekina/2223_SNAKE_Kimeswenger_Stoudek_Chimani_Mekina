@@ -76,13 +76,13 @@ public class SettingsController {
     @FXML
     void btn_highscore_click(ActionEvent event) throws IOException {
         save();
-        ChangeScene.ChangeSceneNow("highscore", btn_highscore);
+        ChangeScene.ChangeSceneNow("Highscore", btn_highscore);
     }
 
     @FXML
     void btn_save_click(ActionEvent event) throws IOException {
         save();
-        ChangeScene.ChangeSceneNow("startmenue", btn_save);
+        ChangeScene.ChangeSceneNow("Startmenue", btn_save);
     }
 
     private void save() {
