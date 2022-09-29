@@ -1,6 +1,5 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina;
 
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.ThreadClass1;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -19,9 +18,6 @@ public class HelloApplication extends Application {
     }
 
     public static void main(String[] args) {
-        ThreadClass1 thread = new ThreadClass1("musicfiles\\kahootmusic.mp3");
-        Thread thread2 = new Thread(thread);
-        thread2.start();
         launch();
     }
 }
