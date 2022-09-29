@@ -38,7 +38,7 @@ public class StartmenueController {
     public Button settingsbutton;
     public ColorPicker colourpicker;
     public ChoiceBox<String> whichFood;
-    private String png;
+    private static String png;
 
     private static FileWriter fw;
 
@@ -88,6 +88,7 @@ public class StartmenueController {
         p.setHighscore(1);
         addnewplayer(p);
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
+        System.out.println("hier start");
         System.out.println(png);
         if (nameinput.getText().equals("")) {
             if (nameinput.getText().equals("")) {

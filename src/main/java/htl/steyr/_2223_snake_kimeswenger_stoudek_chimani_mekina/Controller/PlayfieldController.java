@@ -24,7 +24,7 @@ public class PlayfieldController {
 
     Playfield pf = new Playfield();
 
-    StartmenueController smc = new StartmenueController();
+    static StartmenueController smc = new StartmenueController();
 
     int xPos;
     int yPos;
@@ -33,6 +33,7 @@ public class PlayfieldController {
      * @author lstoudek
      */
     public void initialize() {
+        System.out.println("hier init");
         placeFood();
     /*
  if (playfield != null) {
@@ -64,7 +65,7 @@ public class PlayfieldController {
      */
     public void placeFood() {
         Position position = pf.randomFood();
-        System.out.println(smc.getWhichFood()+"df");
+        img = smc.getWhichFood();
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
         System.out.println("x: " + position.getX() + " y: " + position.getY());
