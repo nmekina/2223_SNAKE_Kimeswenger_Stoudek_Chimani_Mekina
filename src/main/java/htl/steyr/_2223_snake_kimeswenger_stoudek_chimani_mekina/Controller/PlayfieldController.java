@@ -64,7 +64,7 @@ public class PlayfieldController {
      */
     public void placeFood() {
         Position position = pf.randomFood();
-        img = smc.getWhichFood();
+        System.out.println(smc.getWhichFood()+"df");
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
         System.out.println("x: " + position.getX() + " y: " + position.getY());

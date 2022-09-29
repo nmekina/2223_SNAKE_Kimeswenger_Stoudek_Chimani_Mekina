@@ -82,19 +82,13 @@ public class StartmenueController {
 
 
     public void submitbtn(ActionEvent actionEvent) throws IOException {
-        System.out.println("aa");
-
         Player p = new Player();
         p.setName(nameinput.getText());
         p.setGames(1);
         p.setHighscore(1);
         addnewplayer(p);
-        ChangeScene.ChangeSceneNow("playfield", settingsbutton);
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
-        getWhichFood();
         System.out.println(png);
-        System.out.println("bb");
-
         if (nameinput.getText().equals("")) {
             if (nameinput.getText().equals("")) {
                 Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -107,6 +101,8 @@ public class StartmenueController {
             }
 
         }
+
+        ChangeScene.ChangeSceneNow("playfield", settingsbutton);
 
 
     }
