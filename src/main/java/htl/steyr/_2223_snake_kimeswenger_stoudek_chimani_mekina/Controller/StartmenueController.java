@@ -52,9 +52,9 @@ public class StartmenueController {
     public ChoiceBox<String> savedplayersc;
 
     /**
+     * @throws IOException
      * @author skimeswe
      * change Food (apple, banana)
-     * @throws IOException
      */
     public void initialize() throws IOException {
         addSpieler();
@@ -63,7 +63,6 @@ public class StartmenueController {
         }
         whichFood.getItems().add("apple");
         whichFood.getItems().add("banana");
-
 
 
     }
@@ -110,9 +109,8 @@ public class StartmenueController {
         }
 
 
-
     }
-    
+
     public void addnewplayer(Player p) throws IOException {
 
 
@@ -130,12 +128,12 @@ public class StartmenueController {
         a.add(p.toString());   // adding your created object into the array
         System.out.println(a.toString());
 
-     //   fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
-       // fw.write(String.valueOf(js));
+        //fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
+        //fw.write(String.valueOf(js));
         //fw.close();
 
 
-        }
-
     }
+
+}
 
