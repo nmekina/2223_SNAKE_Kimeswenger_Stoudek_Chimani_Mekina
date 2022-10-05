@@ -2,13 +2,12 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Schlange;
 import javafx.animation.AnimationTimer;
-import javafx.application.Platform;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-public class MoveNormal extends AnimationTimer {
+public class Move extends AnimationTimer {
 
     public static final int LENGTH = 1;
 
@@ -17,8 +16,9 @@ public class MoveNormal extends AnimationTimer {
     public Position position;
 
     private long lastTick = 0;
+    private double speed = 0.2;
 
-    MoveNormal(GridPane playfield, Position position){
+    Move(GridPane playfield, Position position){
         this.playfield = playfield;
         this.position = position;
     }
@@ -30,7 +30,7 @@ public class MoveNormal extends AnimationTimer {
         if(lastTick == 0){
             lastTick = l;
         }
-        if (l-lastTick > 100000000) {
+        if (l-lastTick > 100000000/speed) {
             Pane pane = new Pane();
             pane.setStyle(" -fx-background-color: lightgreen");
             if (playfield.getChildren().size() > (1 + LENGTH)) {
@@ -38,11 +38,22 @@ public class MoveNormal extends AnimationTimer {
             }
             playfield.add(pane, position.getX(), position.getY());
             lastTick=l;
-            System.out.println(l);
-            this.position.setX(position.getX()+1);
-            if (position.getX() == 25){
-                position.setX(0);
-                this.position.setY(position.getY()+1);
+            //System.out.println(l);
+            Schlange schlange = Schlange.getSchlange();
+            System.out.println(schlange.getDirection() + " 43Move");
+            switch (schlange.getDirection()){
+                case "A":
+                    position.setX(position.getX() - 1);
+                    break;
+                case "D":
+                    position.setX(position.getX() + 1);
+                    break;
+                case "W":
+                    position.setY(position.getY() - 1);
+                    break;
+                case "S":
+                    position.setY(position.getY() + 1);
+
             }
         }
 
