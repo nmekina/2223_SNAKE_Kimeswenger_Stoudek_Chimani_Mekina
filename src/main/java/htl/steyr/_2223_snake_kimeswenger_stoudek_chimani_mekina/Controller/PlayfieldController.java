@@ -3,19 +3,19 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
 import javafx.fxml.FXML;
-import javafx.scene.PointLight;
-import javafx.scene.control.Label;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.RowConstraints;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
+import java.io.File;
+import java.net.MalformedURLException;
 
 
 public class PlayfieldController {
-
+    MediaPlayer mediaPlayer;
+    Media media;
     public static final int ROW_NR = 25;
     public static final int COL_NR = 20;
     @FXML
@@ -33,8 +33,16 @@ public class PlayfieldController {
      * @author lstoudek
      */
     public void initialize() {
-        System.out.println("hier init");
-        placeFood();
+        File mediaFile = new File("musicfiles/kahootmusic.mp3");
+        Media media = null;
+        try {
+            media = new Media(mediaFile.toURI().toURL().toString());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
+        }
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+
     /*
  if (playfield != null) {
             for (int i = 0; i < ROW_NR; i++) {

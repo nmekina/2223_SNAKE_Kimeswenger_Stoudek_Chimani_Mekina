@@ -1,5 +1,6 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.StartmenueController;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.HelloApplication;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -18,7 +19,7 @@ public class ChangeScene {
         stageclose.close();
 
         final FXMLLoader fxmlLoader = new FXMLLoader();
-        URL u = HelloApplication.class.getResource(game + ".fxml");
+        URL u = StartmenueController.class.getResource(game + ".fxml");
 
         fxmlLoader.setLocation(u);
         Scene scene = new Scene(fxmlLoader.load());

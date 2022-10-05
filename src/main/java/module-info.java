@@ -3,6 +3,7 @@ module htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina {
     requires javafx.fxml;
     requires org.json;
     requires com.google.gson;
+    requires javafx.media;
 
 
     opens htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina to javafx.fxml;
