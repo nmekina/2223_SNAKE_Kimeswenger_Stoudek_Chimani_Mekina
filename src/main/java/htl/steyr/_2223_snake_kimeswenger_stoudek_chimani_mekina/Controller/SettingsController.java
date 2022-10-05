@@ -5,11 +5,17 @@ import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class SettingsController {
 
+    public ImageView Imagefobackground;
+    public ImageView Imagefobackground1;
     @FXML
     private Button btn_save;
 
@@ -49,9 +55,17 @@ public class SettingsController {
     final ToggleGroup rb_difficulty = new ToggleGroup();
     final ToggleGroup rb_music = new ToggleGroup();
     Settings settings = new Settings();
+    FileInputStream inputStream = new FileInputStream("images/snakebackground.png");
+    FileInputStream inputStream1 = new FileInputStream("images/snakehead.png");
+    Image i = new Image(inputStream);
+    Image i1 = new Image(inputStream1);
+
+    public SettingsController() throws FileNotFoundException {
+    }
 
     public void initialize() {
-
+        Imagefobackground.setImage(i);
+        Imagefobackground1.setImage(i1);
         label_headline.setText("Settings");
         label_difficulty.setText("Difficulty:");
         label_music.setText("Music:");
