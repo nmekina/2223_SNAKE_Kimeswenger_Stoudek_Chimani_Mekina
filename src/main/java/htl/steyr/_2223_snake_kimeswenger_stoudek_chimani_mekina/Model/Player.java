@@ -29,13 +29,5 @@ public class Player {
         this.games = games;
     }
 
-    @Override
-    public String toString() {
-        String jsonname = "\"name\": \"";
-        String jsonhighscore = "\", \"highscore\": ";
-        String jsongames = " \"games\": ";
 
-        return jsonname + name + jsonhighscore + highscore + jsongames + games;
-        //{"name": "Nico", "highscore": -10, "games": 3},
-    }
 }

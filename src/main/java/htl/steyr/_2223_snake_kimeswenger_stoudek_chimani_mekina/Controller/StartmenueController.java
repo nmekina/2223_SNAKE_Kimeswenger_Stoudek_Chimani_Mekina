@@ -40,8 +40,6 @@ public class StartmenueController {
     public ChoiceBox<String> whichFood;
     private static String png;
 
-    private static FileWriter fw;
-
     ArrayList<String> list = new ArrayList<>();
 
     public String getWhichFood() {
@@ -81,11 +79,11 @@ public class StartmenueController {
     }
 
 
-    public void submitbtn(ActionEvent actionEvent) throws IOException {
+    public void submitbtn(ActionEvent actionEvent) throws Exception {
         Player p = new Player();
         p.setName(nameinput.getText());
-        p.setGames(1);
-        p.setHighscore(1);
+        p.setGames(11);
+        p.setHighscore(10);
         addnewplayer(p);
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
         System.out.println("hier start");
@@ -108,28 +106,29 @@ public class StartmenueController {
 
     }
 
-    public void addnewplayer(Player p) throws IOException {
+    public void addnewplayer(Player p) throws Exception {
 
 
-        JsonParser parser = new JsonParser();
+
         JSONObject obj = new JSONObject();
-        obj.append("name", p.getName());
-        obj.append("games", p.getName());
-        obj.append("highscore", p.getHighscore());
-        Gson g = new Gson();
+        obj.put("name", p.getName());
+        obj.put("games", p.getGames());
+        obj.put("highscore", p.getHighscore());
+        String file = "src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json";
+        String json = readFileAsString(file);
+        JSONArray ja = new JSONArray(json);
+        ja.put(obj);
+        System.out.println(ja);
+        FileWriter fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
+        fw.write(String.valueOf(ja));
+        fw.close();
 
 
-        JsonArray a = (JsonArray) parser.parse(new FileReader("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json"));   // reading the file and creating a json array of it.
 
-        //a.add(String.valueOf(obj));   // adding your created object into the array
-        a.add(p.toString());   // adding your created object into the array
-        System.out.println(a.toString());
-
-        //fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
-        //fw.write(String.valueOf(js));
-        //fw.close();
-
-
+    }
+    public static String readFileAsString(String file)throws Exception
+    {
+        return new String(Files.readAllBytes(Paths.get(file)));
     }
 
 }
