@@ -1,37 +1,19 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
-import com.google.gson.Gson;
-import com.google.gson.JsonArray;
-
-import com.google.gson.JsonParser;
-import com.google.gson.JsonArray;
-import com.google.gson.reflect.TypeToken;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.ChangeScene;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Player;
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.Region;
-import javafx.scene.paint.Color;
-import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-
-import java.io.*;
-import java.lang.reflect.Type;
-import java.net.URL;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Scanner;
 
 public class StartmenueController {
     public TextArea nameinput;
@@ -109,7 +91,6 @@ public class StartmenueController {
     public void addnewplayer(Player p) throws Exception {
 
 
-
         JSONObject obj = new JSONObject();
         obj.put("name", p.getName());
         obj.put("games", p.getGames());
@@ -119,15 +100,14 @@ public class StartmenueController {
         JSONArray ja = new JSONArray(json);
         ja.put(obj);
         System.out.println(ja);
-        FileWriter fw = new FileWriter("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
+        FileWriter fw = new FileWriter(file);
         fw.write(String.valueOf(ja));
         fw.close();
 
 
-
     }
-    public static String readFileAsString(String file)throws Exception
-    {
+
+    public static String readFileAsString(String file) throws Exception {
         return new String(Files.readAllBytes(Paths.get(file)));
     }
 
