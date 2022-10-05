@@ -63,6 +63,10 @@ public class SettingsController {
     public SettingsController() throws FileNotFoundException {
     }
 
+    /**
+     * Der Initialize befüllt alle labels, buttons etc.
+     * mit den gewünschten Inhalten.
+     */
     public void initialize() {
         Imagefobackground.setImage(i);
         Imagefobackground1.setImage(i1);
@@ -103,7 +107,7 @@ public class SettingsController {
     private void save() {
         savedifficulty();
         savemusic();
-        savevalume();
+        savevolume();
     }
 
     private void savedifficulty() {
@@ -122,7 +126,7 @@ public class SettingsController {
         }
     }
 
-    private void savevalume() {
+    private void savevolume() {
         Float sliderValue = Float.valueOf(String.valueOf(slider_volume.getValue()));
         System.out.println(sliderValue);
         settings.setVolume(sliderValue);

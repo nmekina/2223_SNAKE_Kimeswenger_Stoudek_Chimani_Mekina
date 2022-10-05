@@ -25,11 +25,10 @@ public class HighscoreController {
     @FXML
     private Button btn_back;
 
-    private ArrayList<String[]> allplayers = new ArrayList<>();
-    private ArrayList<String[]> scoreboard = new ArrayList<>();
+    private final ArrayList<String[]> allplayers = new ArrayList<>();
+    private final ArrayList<String[]> scoreboard = new ArrayList<>();
     private int highscore = 0;
     private int mostgames = 0;
-    private String highestname;
     private int indexfromplayer = 0;
 
     @FXML
@@ -122,7 +121,7 @@ public class HighscoreController {
     public void sortName() throws IOException {
         addSpieler();
         while (allplayers.size() > 0) {
-            highestname = allplayers.get(0)[0];
+            String highestname = allplayers.get(0)[0];
             for (int i = 0; i < allplayers.size(); i++) {
                 if (highestname.compareTo(allplayers.get(i)[0]) > 0) {
                     highestname = allplayers.get(i)[0];
