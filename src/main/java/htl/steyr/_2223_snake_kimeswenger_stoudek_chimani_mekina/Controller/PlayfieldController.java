@@ -90,8 +90,6 @@ public class PlayfieldController {
         img = smc.getWhichFood();
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
-        System.out.println("x: " + position.getX() + " y: " + position.getY());
-
     }
 
 
