@@ -51,6 +51,7 @@ public class SettingsController {
     Settings settings = new Settings();
 
     public void initialize() {
+
         label_headline.setText("Settings");
         label_difficulty.setText("Difficulty:");
         label_music.setText("Music:");
@@ -109,6 +110,7 @@ public class SettingsController {
 
     private void savevalume() {
         Float sliderValue = Float.valueOf(String.valueOf(slider_volume.getValue()));
+        System.out.println(sliderValue);
         settings.setVolume(sliderValue);
     }
 }

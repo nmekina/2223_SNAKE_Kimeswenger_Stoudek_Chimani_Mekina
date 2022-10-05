@@ -4,6 +4,7 @@ import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -19,6 +20,7 @@ import java.net.MalformedURLException;
 public class PlayfieldController {
     MediaPlayer mediaPlayer;
     Media media;
+    Settings s = new Settings();
     public static final int ROW_NR = 25;
     public static final int COL_NR = 20;
     @FXML
@@ -35,9 +37,11 @@ public class PlayfieldController {
 
     /**
      * @author lstoudek
+     * @author skimeswe
      */
     public void initialize() {
         placeFood();
+    public void initialize() throws MalformedURLException {
         File mediaFile = new File("musicfiles/kahootmusic.mp3");
         Media media = null;
         playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
@@ -46,6 +50,8 @@ public class PlayfieldController {
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
         }
+        Media media = new Media(mediaFile.toURI().toURL().toString());
+
         mediaPlayer = new MediaPlayer(media);
         mediaPlayer.setAutoPlay(true);
 
@@ -83,7 +89,9 @@ public class PlayfieldController {
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
         System.out.println("x: " + position.getX() + " y: " + position.getY());
+
     }
+
 
 
 
