@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="547.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.PlayfieldController">
+<AnchorPane prefHeight="547.0" prefWidth="577.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.PlayfieldController">
     <children>
         <GridPane fx:id="playfield" layoutX="-4.0" layoutY="46.0" prefHeight="501.0" prefWidth="585.0" styleClass="playfield" stylesheets="@PlayfieldStyle.css">
             <columnConstraints>
@@ -61,7 +61,7 @@
                 <RowConstraints />
             </rowConstraints>
         </GridPane>
-      <Label layoutX="234.0" layoutY="14.0" prefHeight="32.0" prefWidth="140.0" text="SNAKE GAME">
+      <Label fx:id="titleLabel" layoutX="234.0" layoutY="14.0" prefHeight="32.0" prefWidth="140.0" text="SNAKE GAME">
          <font>
             <Font size="21.0" />
          </font>

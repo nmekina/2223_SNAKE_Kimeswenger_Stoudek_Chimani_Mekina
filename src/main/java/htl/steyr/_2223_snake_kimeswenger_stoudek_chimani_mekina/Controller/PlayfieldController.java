@@ -94,11 +94,9 @@ public class PlayfieldController {
         @Override
         public void handle(MouseEvent mouseEvent) {
             AnimationTimer th1 = new Move(playfield, new Position(j, i));
-            // Thread th1 = new MoveNormal(playfield, new Position(j, i));
             th1.start();
             titleLabel.getScene().addEventFilter(KeyEvent.KEY_PRESSED, moveEventHandler);
 
-            //playfield.removeEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
         }
     }
 
