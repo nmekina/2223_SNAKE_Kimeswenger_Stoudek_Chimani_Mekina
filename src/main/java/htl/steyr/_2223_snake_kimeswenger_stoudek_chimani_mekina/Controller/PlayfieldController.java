@@ -41,22 +41,25 @@ public class PlayfieldController {
      */
 
 
-        public void initialize() throws MalformedURLException {
-            placeFood();
-            File mediaFile = new File("musicfiles/kahootmusic.mp3");
-            Media media = null;
-            playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
-            try {
-                media = new Media(mediaFile.toURI().toURL().toString());
-            } catch (MalformedURLException e) {
-                throw new RuntimeException(e);
-            }
+    public void initialize() throws MalformedURLException {
+        placeFood();
 
-
-            mediaPlayer = new MediaPlayer(media);
-            mediaPlayer.setAutoPlay(true);
+        File mediaFile = new File("musicfiles/kahootmusic.mp3");
+        Media media = null;
+        playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
+        try {
+            media = new Media(mediaFile.toURI().toURL().toString());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         }
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
 
+
+        mediaPlayer = new MediaPlayer(media);
+        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setVolume(s.getVolume() / 100);
+    }
     /*
  if (playfield != null) {
             for (int i = 0; i < ROW_NR; i++) {
@@ -95,12 +98,11 @@ public class PlayfieldController {
     }
 
 
-
-
-     class StartEventHandler implements EventHandler<MouseEvent> {
+    class StartEventHandler implements EventHandler<MouseEvent> {
         int i = 0;
 
         int j = 0;
+
         @Override
         public void handle(MouseEvent mouseEvent) {
             AnimationTimer th1 = new MoveNormal(playfield, new Position(j, i));
