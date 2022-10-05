@@ -14,6 +14,7 @@ import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.net.MalformedURLException;
 
 
@@ -35,6 +36,11 @@ public class PlayfieldController {
     int xPos;
     int yPos;
 
+
+    public PlayfieldController() throws FileNotFoundException {
+    }
+
+
     /**
      * @author lstoudek
      * @author skimeswe
@@ -42,6 +48,7 @@ public class PlayfieldController {
 
 
     public void initialize() throws MalformedURLException {
+
         placeFood();
 
         File mediaFile = new File("musicfiles/kahootmusic.mp3");
