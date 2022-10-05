@@ -51,6 +51,7 @@ public class SettingsController {
     Settings settings = new Settings();
 
     public void initialize() {
+
         label_headline.setText("Settings");
         label_difficulty.setText("Difficulty:");
         label_music.setText("Music:");
