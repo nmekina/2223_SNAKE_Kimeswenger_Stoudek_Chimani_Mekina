@@ -6,23 +6,22 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="407.0" prefWidth="336.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.HighscoreController">
+<AnchorPane minHeight="407.0" minWidth="336.0" prefHeight="407.0" prefWidth="336.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.HighscoreController">
    <children>
-      <Label layoutX="24.0" layoutY="14.0" text="Scoreboard:">
+      <Label layoutX="24.0" layoutY="14.0" text="Scoreboard:" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="196.0" AnchorPane.topAnchor="14.0">
          <font>
             <Font name="System Bold Italic" size="21.0" />
          </font>
       </Label>
-      <Button layoutX="82.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbyname" text="name" />
-      <Button layoutX="135.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbyhighscore" text="highscore" />
-      <Button layoutX="211.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbygames" text="games" />
-      <Label layoutX="24.0" layoutY="53.0" text="Sort by:">
+      <Button layoutX="82.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbyname" text="name" AnchorPane.leftAnchor="82.0" AnchorPane.topAnchor="51.0" />
+      <Button layoutX="135.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbyhighscore" text="highscore" AnchorPane.leftAnchor="135.0" AnchorPane.topAnchor="51.0" />
+      <Button layoutX="210.0" layoutY="51.0" mnemonicParsing="false" onAction="#sortbygames" text="games" AnchorPane.leftAnchor="210.0" AnchorPane.topAnchor="51.0" />
+      <Label layoutX="24.0" layoutY="53.0" text="Sort by:" AnchorPane.leftAnchor="24.0" AnchorPane.topAnchor="53.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <ListView fx:id="list_score" layoutX="24.0" layoutY="84.0" prefHeight="287.0" prefWidth="289.0" />
-      <Button fx:id="btn_back" layoutX="149.0" layoutY="374.0" mnemonicParsing="false" onAction="#btn_back_click" text="back" />
+      <ListView fx:id="list_score" layoutX="24.0" layoutY="84.0" prefHeight="287.0" prefWidth="289.0" AnchorPane.bottomAnchor="36.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="23.0" AnchorPane.topAnchor="84.0" />
+      <Button fx:id="btn_back" layoutX="149.0" layoutY="374.0" mnemonicParsing="false" onAction="#btn_back_click" text="back" AnchorPane.bottomAnchor="8.0" AnchorPane.leftAnchor="149.0" AnchorPane.rightAnchor="146.0" />
    </children>
 </AnchorPane>
