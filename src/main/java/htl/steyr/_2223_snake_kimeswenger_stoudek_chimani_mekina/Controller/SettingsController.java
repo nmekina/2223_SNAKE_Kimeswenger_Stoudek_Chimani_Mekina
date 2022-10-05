@@ -109,6 +109,7 @@ public class SettingsController {
 
     private void savevalume() {
         Float sliderValue = Float.valueOf(String.valueOf(slider_volume.getValue()));
+        System.out.println(sliderValue);
         settings.setVolume(sliderValue);
     }
 }
