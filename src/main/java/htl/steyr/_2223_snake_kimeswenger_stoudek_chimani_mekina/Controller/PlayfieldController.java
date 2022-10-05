@@ -2,9 +2,12 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
+import javafx.animation.AnimationTimer;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
@@ -26,6 +29,7 @@ public class PlayfieldController {
 
     static StartmenueController smc = new StartmenueController();
 
+    private EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
     int xPos;
     int yPos;
 
@@ -33,8 +37,10 @@ public class PlayfieldController {
      * @author lstoudek
      */
     public void initialize() {
+        placeFood();
         File mediaFile = new File("musicfiles/kahootmusic.mp3");
         Media media = null;
+        playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
         try {
             media = new Media(mediaFile.toURI().toURL().toString());
         } catch (MalformedURLException e) {
@@ -77,5 +83,22 @@ public class PlayfieldController {
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
         System.out.println("x: " + position.getX() + " y: " + position.getY());
+    }
+
+
+
+    private class StartEventHandler implements EventHandler<MouseEvent> {
+        int i = 0;
+
+        int j = 0;
+        @Override
+        public void handle(MouseEvent mouseEvent) {
+            AnimationTimer th1 = new MoveNormal(playfield, new Position(j, i));
+            // Thread th1 = new MoveNormal(playfield, new Position(j, i));
+            th1.start();
+
+
+            //playfield.removeEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
+        }
     }
 }
