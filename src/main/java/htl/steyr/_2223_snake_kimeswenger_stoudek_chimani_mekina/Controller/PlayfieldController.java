@@ -31,7 +31,7 @@ public class PlayfieldController {
 
     static StartmenueController smc = new StartmenueController();
 
-    private EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
+    private final EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
     int xPos;
     int yPos;
 
@@ -53,11 +53,8 @@ public class PlayfieldController {
             throw new RuntimeException(e);
         }
         mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setAutoPlay(true);
 
-
-        mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setAutoPlay(true);
+        mediaPlayer.setAutoPlay(s.getMusic());
         mediaPlayer.setVolume(s.getVolume() / 100);
     }
     /*
