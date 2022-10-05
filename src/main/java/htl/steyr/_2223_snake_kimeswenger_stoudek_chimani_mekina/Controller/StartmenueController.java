@@ -83,7 +83,7 @@ public class StartmenueController {
         Player p = new Player();
         p.setName(nameinput.getText());
         p.setGames(11);
-        p.setHighscore(20);
+        p.setHighscore(10);
         addnewplayer(p);
 
 
@@ -99,6 +99,22 @@ public class StartmenueController {
         String json = readFileAsString(file);
         JSONArray ja = new JSONArray(json);
 
+/*
+        int count = 0;
+        while (i.hasNext()) {
+            count++;
+            ja = i.next();
+            if (Objects.equals(Player.name, p.name)) {
+                check = false;
+                p.games++;
+                p.coins = coins + p.coins;
+                if (Settings.getHighscoreonoff()) {
+                    if (score > p.highscore) {
+                        player.get(count - 1).highscore = score;
+                    }
+                }
+            }
+        }*/
         Boolean b = false;
 
         for (int i = 0; i < ja.length(); i++) {
@@ -106,11 +122,6 @@ public class StartmenueController {
             objv = ja.getJSONObject(i);
             if (objv.getString("name").equals(p.getName())) {
                 b = true;
-            }
-            if (objv.getString("name").equals(p.getName())&&objv.getInt("highscore")!=p.getHighscore()) {
-                objv.remove("highscore");
-                objv.append("highscore",p.getHighscore());
-                System.out.println(objv);
             }
 
         }
