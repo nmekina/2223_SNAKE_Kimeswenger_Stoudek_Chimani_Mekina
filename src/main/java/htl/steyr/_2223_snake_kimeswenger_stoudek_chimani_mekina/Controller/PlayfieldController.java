@@ -39,21 +39,23 @@ public class PlayfieldController {
      * @author lstoudek
      * @author skimeswe
      */
-    public void initialize() {
-        placeFood();
-    public void initialize() throws MalformedURLException {
-        File mediaFile = new File("musicfiles/kahootmusic.mp3");
-        Media media = null;
-        playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
-        try {
-            media = new Media(mediaFile.toURI().toURL().toString());
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
-        Media media = new Media(mediaFile.toURI().toURL().toString());
 
-        mediaPlayer = new MediaPlayer(media);
-        mediaPlayer.setAutoPlay(true);
+
+        public void initialize() throws MalformedURLException {
+            placeFood();
+            File mediaFile = new File("musicfiles/kahootmusic.mp3");
+            Media media = null;
+            playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
+            try {
+                media = new Media(mediaFile.toURI().toURL().toString());
+            } catch (MalformedURLException e) {
+                throw new RuntimeException(e);
+            }
+
+
+            mediaPlayer = new MediaPlayer(media);
+            mediaPlayer.setAutoPlay(true);
+        }
 
     /*
  if (playfield != null) {
@@ -77,7 +79,7 @@ public class PlayfieldController {
         }
 
      */
-    }
+
 
     /**
      * @author skimeswe
@@ -95,7 +97,7 @@ public class PlayfieldController {
 
 
 
-    private class StartEventHandler implements EventHandler<MouseEvent> {
+     class StartEventHandler implements EventHandler<MouseEvent> {
         int i = 0;
 
         int j = 0;
