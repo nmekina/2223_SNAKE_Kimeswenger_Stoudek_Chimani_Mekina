@@ -8,8 +8,8 @@ import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.Playf
  * foodY => Y-Koordinate des Essens
  */
 public class Playfield {
-    private int foodX;
-    private int foodY;
+    static int foodX;
+    static int foodY;
 
     /**
      * platziert das Essen auf einer zufälligen Position
@@ -17,8 +17,24 @@ public class Playfield {
      * @return Positionsobjekt mit X- und Y-Koordinate
      */
     public Position randomFood() {
-        foodX = (int) (Math.random() * PlayfieldController.ROW_NR);
-        foodY = (int) (Math.random() * PlayfieldController.COL_NR);
+        setFoodX((int) (Math.random() * PlayfieldController.ROW_NR));
+        setFoodY((int) (Math.random() * PlayfieldController.COL_NR));
         return new Position(foodX, foodY);
+    }
+
+    public int getFoodX() {
+        return foodX;
+    }
+
+    public void setFoodX(int foodX) {
+        Playfield.foodX = foodX;
+    }
+
+    public int getFoodY() {
+        return foodY;
+    }
+
+    public void setFoodY(int foodY) {
+        Playfield.foodY = foodY;
     }
 }

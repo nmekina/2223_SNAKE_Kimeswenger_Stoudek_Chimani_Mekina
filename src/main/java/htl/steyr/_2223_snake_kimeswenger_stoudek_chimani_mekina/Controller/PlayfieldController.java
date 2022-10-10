@@ -24,7 +24,9 @@ import java.net.MalformedURLException;
 public class PlayfieldController {
     @FXML
     public Label titleLabel;
+    public Label highscoreLabel;
     MediaPlayer mediaPlayer;
+
     Media media;
     Settings s = new Settings();
     public static final int ROW_NR = 25;
@@ -33,19 +35,16 @@ public class PlayfieldController {
     public GridPane playfield = new GridPane();
     public String img;
 
+    Move move;
+
     Playfield pf = new Playfield();
 
     static StartmenueController smc = new StartmenueController();
 
     private EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
     private EventHandler<KeyEvent> moveEventHandler = new MoveEventHandler();
-    int xPos;
-    int yPos;
 
-
-    public PlayfieldController() throws FileNotFoundException {
-    }
-
+    public PlayfieldController() throws FileNotFoundException {}
 
     /**
      * @author lstoudek
