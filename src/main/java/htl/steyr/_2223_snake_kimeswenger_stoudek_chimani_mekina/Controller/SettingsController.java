@@ -119,11 +119,7 @@ public class SettingsController {
     private void savemusic() {
         RadioButton selectedmusic = (RadioButton) rb_music.getSelectedToggle();
         String musicValue = selectedmusic.getText();
-        if (musicValue.equals("off")) {
-            settings.setMusic(false);
-        } else {
-            settings.setMusic(true);
-        }
+        settings.setMusic(!musicValue.equals("off"));
     }
 
     private void savevolume() {
