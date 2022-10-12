@@ -29,10 +29,14 @@ public class MoveController extends AnimationTimer {
 
     Settings settings = new Settings();
     double speed = settings.getDifficulty();
+    PlayfieldController playfieldController;
 
-    MoveController(GridPane playfield, Position position) {
+
+    MoveController(GridPane playfield, Position position, PlayfieldController playfieldController) {
         this.playfield = playfield;
         this.position = position;
+        this.playfieldController = playfieldController;
+        this.playfieldController.placeFood();
     }
 
     @Override
@@ -47,6 +51,7 @@ public class MoveController extends AnimationTimer {
                 if (playfield.getChildren().size() > (1 + LENGTH)) {
                     playfield.getChildren().remove(2);
                 }
+
                 lastTick = l;
                 Schlange schlange = Schlange.getSchlange();
                 switch (schlange.getDirection()) {
@@ -68,6 +73,7 @@ public class MoveController extends AnimationTimer {
                     }
                     LENGTH += 1;
                     setHighscore(highscore += 1);
+                    playfieldController.placeFood();
                 }
 
             }

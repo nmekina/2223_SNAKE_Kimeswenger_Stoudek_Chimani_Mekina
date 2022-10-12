@@ -39,6 +39,8 @@ public class PlayfieldController {
     MoveController move;
 
     Playfield pf = new Playfield();
+    PlayfieldController playfieldController = this;
+    int count = 0;
 
     static StartmenueController smc = new StartmenueController();
 
@@ -58,8 +60,6 @@ public class PlayfieldController {
      * ON/OFF kann separat eingestellt werden
      */
     public void initialize() {
-        placeFood();
-
         File mediaFile = new File("musicfiles/kahootmusic.mp3");
         media = null;
         playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
@@ -81,11 +81,15 @@ public class PlayfieldController {
      * diese Methode plaziert an zufälligen Stellen ein
      * zuvor ausgewähltes Futter
      */
-    public void placeFood() {
+    public GridPane placeFood() {
+        if (count > 0) {
+            playfield.getChildren().remove(0);
+        }
         Position position = pf.randomFood();
         img = smc.getWhichFood();
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
+        return playfield;
     }
 
 
@@ -96,7 +100,7 @@ public class PlayfieldController {
 
         @Override
         public void handle(MouseEvent mouseEvent) {
-            AnimationTimer th1 = new MoveController(playfield, new Position(j, i));
+            AnimationTimer th1 = new MoveController(playfield, new Position(j, i), playfieldController);
             th1.start();
             titleLabel.getScene().addEventFilter(KeyEvent.KEY_PRESSED, moveEventHandler);
         }
