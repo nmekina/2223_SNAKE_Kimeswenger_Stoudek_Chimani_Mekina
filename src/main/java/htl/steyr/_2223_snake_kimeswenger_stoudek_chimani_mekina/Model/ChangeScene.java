@@ -2,6 +2,7 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.StartmenueController;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
@@ -18,13 +19,13 @@ public class ChangeScene {
      * wechelt die Scene
      *
      * @param game   => Name des Fensters inn welches gewechselt werden soll
-     * @param button => Button, um die alte Stage schließen zu können
+     * @param node => Button, um die alte Stage schließen zu können
      * @throws IOException
      */
-    public static void ChangeSceneNow(String game, Button button) throws IOException {
+    public static void ChangeSceneNow(String game, Node node) throws IOException {
         Stage stage = new Stage();
 
-        Stage stageclose = (Stage) button.getScene().getWindow();
+        Stage stageclose = (Stage) node.getScene().getWindow();
         stageclose.close();
 
         final FXMLLoader fxmlLoader = new FXMLLoader();

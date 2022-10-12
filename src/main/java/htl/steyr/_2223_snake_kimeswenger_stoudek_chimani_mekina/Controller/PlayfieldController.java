@@ -1,9 +1,6 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Schlange;
-import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.*;
 import javafx.animation.AnimationTimer;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -15,10 +12,13 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.MalformedURLException;
+import java.sql.Statement;
 
 
 public class PlayfieldController {
@@ -110,8 +110,18 @@ public class PlayfieldController {
             System.out.println(keyEvent.getCode());
             Schlange schlange = Schlange.getSchlange();
             String key = keyEvent.getText().toUpperCase();
-            if (key.equals("A") || key.equals("W") || key.equals("S") || key.equals("D")) {
-                schlange.setDirection(key);
+            if (!key.equals("")) {
+                if (key.equals("A") || key.equals("W") || key.equals("S") || key.equals("D") || key.equals(" ")) {
+                    schlange.setDirection(key);
+                }
+            }else {
+                Stage stage = (Stage) highscoreLabel.getScene().getWindow();
+                stage.close();
+                try {
+                    ChangeScene.ChangeSceneNow("Startmenue", titleLabel);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
         }
     }

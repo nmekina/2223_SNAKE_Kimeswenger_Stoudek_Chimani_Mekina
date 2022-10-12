@@ -6,6 +6,8 @@ import javafx.animation.AnimationTimer;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
+import java.util.Objects;
+
 public class MoveController extends AnimationTimer {
 
     public static int LENGTH = 3;
@@ -15,6 +17,8 @@ public class MoveController extends AnimationTimer {
 
     int highscore = 0;
     private boolean ismoving = true;
+
+    private String lastDir = "";
 
     public int getHighscore() {
         return highscore;
@@ -38,6 +42,14 @@ public class MoveController extends AnimationTimer {
 
     @Override
     public void handle(long l) {
+        Schlange schlange = Schlange.getSchlange();
+        if (Objects.equals(schlange.getDirection(), " ")){
+            ismoving = !ismoving;
+            schlange.setDirection(lastDir);
+        }else {
+            lastDir = schlange.getDirection();
+        }
+
         if (ismoving) {
             if (lastTick == 0) {
                 lastTick = l;
@@ -49,14 +61,18 @@ public class MoveController extends AnimationTimer {
                     playfield.getChildren().remove(2);
                 }
                 lastTick = l;
-                Schlange schlange = Schlange.getSchlange();
+
                 switch (schlange.getDirection()) {
                     case "A" -> position.setX(position.getX() - 1);
                     case "D" -> position.setX(position.getX() + 1);
                     case "W" -> position.setY(position.getY() - 1);
                     case "S" -> position.setY(position.getY() + 1);
                 }
-                if (position.getX() < PlayfieldController.ROW_NR && position.getX() >= 0 && position.getY() < PlayfieldController.COL_NR && position.getY() >= 0) {
+                if (position.getX() < PlayfieldController.ROW_NR
+                        && position.getX() >= 0
+                        && position.getY() < PlayfieldController.COL_NR
+                        && position.getY() >= 0
+                        && ismoving) {
                     playfield.add(pane, position.getX(), position.getY());
                 } else {
                     ismoving = false;
