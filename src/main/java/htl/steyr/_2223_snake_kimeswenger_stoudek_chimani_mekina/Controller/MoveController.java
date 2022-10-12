@@ -48,7 +48,6 @@ public class MoveController extends AnimationTimer {
                 if (playfield.getChildren().size() > (1 + LENGTH)) {
                     playfield.getChildren().remove(2);
                 }
-                playfield.add(pane, position.getX(), position.getY());
                 lastTick = l;
                 Schlange schlange = Schlange.getSchlange();
                 switch (schlange.getDirection()) {

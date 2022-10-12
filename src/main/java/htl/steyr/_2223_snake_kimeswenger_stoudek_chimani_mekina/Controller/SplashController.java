@@ -21,6 +21,8 @@ public class SplashController {
     public AnchorPane AnchorPane;
     public javafx.scene.layout.AnchorPane ap;
 
+    private boolean splashonscreen = true;
+
     public void initialize(){
         Image image = new Image("https://static.vecteezy.com/system/resources/thumbnails/000/373/352/small/vksq_7pzq_170804.jpg");
         view.setImage(image);
@@ -36,20 +38,22 @@ public class SplashController {
                     System.out.println(e);
                 }
                 Platform.runLater(new Runnable() {
+
+
                     @Override
                     public void run() {
                         try {
-                            AnchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Settings.fxml")));
-                            Stage stage = new Stage();
-                            Scene scene = new Scene(AnchorPane);
-                            scene.setFill(Color.TRANSPARENT);
-                            stage.initStyle(StageStyle.TRANSPARENT);
-                            stage.setTitle("Battleship");
-                            stage.setScene(scene);
-                            stage.setMinHeight(400);
-                            stage.setMinWidth(255);
-                            stage.show();
-                            ap.getScene().getWindow().hide();
+                                AnchorPane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("Settings.fxml")));
+                                Stage stage = new Stage();
+                                Scene scene = new Scene(AnchorPane);
+                                scene.setFill(Color.TRANSPARENT);
+                                stage.initStyle(StageStyle.TRANSPARENT);
+                                stage.setTitle("Battleship");
+                                stage.setScene(scene);
+                                stage.setMinHeight(400);
+                                stage.setMinWidth(255);
+                                stage.show();
+                                ap.getScene().getWindow().hide();
                         } catch (IOException ex) {
                             Logger.getLogger(SplashController.class.getName()).log(Level.SEVERE, null, ex);
                         }
