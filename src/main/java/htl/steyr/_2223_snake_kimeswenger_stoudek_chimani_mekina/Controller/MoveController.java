@@ -1,4 +1,3 @@
-
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.*;
@@ -80,6 +79,9 @@ public class MoveController extends AnimationTimer {
                     //ToDo Spiel beenden
                 }
                 if (position.getX() == pf.getFoodX() && position.getY() == pf.getFoodY()) {
+                    if ((LENGTH % 7) == 0) {
+                        speed += 0.1;
+                    }
                     LENGTH += 1;
                     setHighscore(highscore += 1);
                 }
@@ -87,7 +89,7 @@ public class MoveController extends AnimationTimer {
             }
         }
     }
-    }
+}
 
 
 
