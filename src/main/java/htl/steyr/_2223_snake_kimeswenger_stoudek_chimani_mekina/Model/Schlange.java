@@ -1,5 +1,7 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 
+import java.util.ArrayList;
+
 /**
  * Klass für die Schlange
  * schlange => Schlangen instanz, weil Singleton
@@ -7,16 +9,23 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
  * length => Länge der Schlange
  */
 public class Schlange {
+
     static Schlange schlange = null;
+
     private String direction;
-    private int length;
+
+    private int length = 3;
+
+    ArrayList<Position> snakePos = new ArrayList();
 
     /**
      * privater Konstruktor fürs setzen der Richtung und der Länge
      */
     private Schlange() {
         direction = "D";
-        length = 3;
+        snakePos.add(new Position(3,4));
+        snakePos.add(new Position(4,4));
+        snakePos.add(new Position(5,4));
     }
 
     /**

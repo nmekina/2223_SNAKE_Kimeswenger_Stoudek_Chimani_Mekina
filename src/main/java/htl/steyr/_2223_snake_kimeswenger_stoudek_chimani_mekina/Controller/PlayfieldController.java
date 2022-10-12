@@ -24,6 +24,7 @@ import java.net.MalformedURLException;
 public class PlayfieldController {
     @FXML
     public Label titleLabel;
+    @FXML
     public Label highscoreLabel;
     MediaPlayer mediaPlayer;
 
@@ -43,8 +44,11 @@ public class PlayfieldController {
 
     private EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
     private EventHandler<KeyEvent> moveEventHandler = new MoveEventHandler();
+    int xPos;
+    int yPos;
 
-    public PlayfieldController() throws FileNotFoundException {}
+
+    public PlayfieldController() {}
 
     /**
      * @author lstoudek
@@ -95,7 +99,6 @@ public class PlayfieldController {
             AnimationTimer th1 = new MoveController(playfield, new Position(j, i));
             th1.start();
             titleLabel.getScene().addEventFilter(KeyEvent.KEY_PRESSED, moveEventHandler);
-
         }
     }
 
