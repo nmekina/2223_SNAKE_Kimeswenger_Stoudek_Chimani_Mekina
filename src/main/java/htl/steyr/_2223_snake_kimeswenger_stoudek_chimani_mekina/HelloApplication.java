@@ -12,9 +12,9 @@ public class HelloApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
 
-        FXMLLoader fxmlLoader = new FXMLLoader(SettingsController.class.getResource("Settings.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(SettingsController.class.getResource("splashview.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        stage.setTitle("Snake!");
+        stage.setTitle("Loading Snake...");
         stage.setScene(scene);
         stage.show();
     }
