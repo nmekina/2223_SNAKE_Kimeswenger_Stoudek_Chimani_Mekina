@@ -19,7 +19,7 @@ public class Settings {
     }
 
     public void setDifficulty(int difficulty) {
-        this.difficulty = difficulty;
+        Settings.difficulty = difficulty;
     }
 
     public boolean getMusic() {

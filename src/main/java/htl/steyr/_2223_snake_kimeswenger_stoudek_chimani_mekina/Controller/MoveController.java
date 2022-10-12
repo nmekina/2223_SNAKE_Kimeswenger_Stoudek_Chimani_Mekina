@@ -4,11 +4,12 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Playfield;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Position;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Schlange;
+import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Settings;
 import javafx.animation.AnimationTimer;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 
-public class Move extends AnimationTimer {
+public class MoveController extends AnimationTimer {
 
     public static int LENGTH = 1;
 
@@ -29,7 +30,11 @@ public class Move extends AnimationTimer {
 
     private long lastTick = 0;
 
-    Move(GridPane playfield, Position position) {
+    Settings settings = new Settings();
+    double speed = settings.getDifficulty();
+
+
+    MoveController(GridPane playfield, Position position) {
         this.playfield = playfield;
         this.position = position;
     }
@@ -39,8 +44,7 @@ public class Move extends AnimationTimer {
         if (lastTick == 0) {
             lastTick = l;
         }
-        double speed = 0.2;
-        if (l - lastTick > 100000000 / speed) {
+        if (l - lastTick > 200000000 / speed) {
             Pane pane = new Pane();
             pane.setStyle(" -fx-background-color: lightgreen");
             if (playfield.getChildren().size() > (1 + LENGTH)) {

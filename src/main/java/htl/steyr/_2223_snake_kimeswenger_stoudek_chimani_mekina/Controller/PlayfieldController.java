@@ -35,7 +35,7 @@ public class PlayfieldController {
     public GridPane playfield = new GridPane();
     public String img;
 
-    Move move;
+    MoveController move;
 
     Playfield pf = new Playfield();
 
@@ -92,7 +92,7 @@ public class PlayfieldController {
 
         @Override
         public void handle(MouseEvent mouseEvent) {
-            AnimationTimer th1 = new Move(playfield, new Position(j, i));
+            AnimationTimer th1 = new MoveController(playfield, new Position(j, i));
             th1.start();
             titleLabel.getScene().addEventFilter(KeyEvent.KEY_PRESSED, moveEventHandler);
 
