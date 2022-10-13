@@ -83,9 +83,9 @@ public class StartmenueController {
         }
         Player p = new Player();
         p.setName(nameinput.getText());
-        p.setGames(11);
-        p.setHighscore(20);
-        addnewplayer(p);
+        p.setGames(0);
+        p.setHighscore(0);
+
 
 
         ChangeScene.ChangeSceneNow("playfield", settingsbutton);
