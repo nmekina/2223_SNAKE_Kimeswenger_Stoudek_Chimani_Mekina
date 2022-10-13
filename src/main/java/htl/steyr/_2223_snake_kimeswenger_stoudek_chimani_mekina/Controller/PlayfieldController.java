@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
@@ -103,6 +104,7 @@ public class PlayfieldController {
             AnimationTimer th1 = new MoveController(playfield, new Position(j, i), playfieldController);
             th1.start();
             titleLabel.getScene().addEventFilter(KeyEvent.KEY_PRESSED, moveEventHandler);
+            playfield.removeEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
         }
     }
 
@@ -114,7 +116,7 @@ public class PlayfieldController {
             System.out.println(keyEvent.getCode());
             Schlange schlange = Schlange.getSchlange();
             String key = keyEvent.getText().toUpperCase();
-            if (!key.equals("")) {
+            if (!(keyEvent.getCode() == KeyCode.ESCAPE)) {
                 if (key.equals("A") || key.equals("W") || key.equals("S") || key.equals("D") || key.equals(" ")) {
                     schlange.setDirection(key);
                 }
