@@ -110,16 +110,19 @@ public class MoveController extends AnimationTimer {
                         snakePos.get(0).setY(snakePos.get(0).getY() + 1);
                     }
                 }
-                if (position.getX() < PlayfieldController.ROW_NR
-                        && position.getX() >= 0
-                        && position.getY() < PlayfieldController.COL_NR
-                        && position.getY() >= 0
-                        && ismoving) {
+
 
                     if (snakePos.size()>3){
                     for (int j = 1; j < snakePos.size(); j++) {
                         if (snakePos.get(0).getX() == snakePos.get(j).getX() && snakePos.get(0).getY() == snakePos.get(j).getY()) {
                             ismoving = false;
+                            Alert alert = new Alert(Alert.AlertType.ERROR);
+                            alert.setTitle("Fehler ");
+                            alert.setHeaderText(null);
+                            alert.setContentText("Eingenen Körper beruehrt\n");
+
+                            alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
+                            alert.show();
 
                         }
                     }
@@ -130,9 +133,9 @@ public class MoveController extends AnimationTimer {
 
                     } else {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
-                        alert.setTitle("Ungueltiger Player ");
+                        alert.setTitle("Fehler");
                         alert.setHeaderText(null);
-                        alert.setContentText("Ungueltiger Player:\n");
+                        alert.setContentText("Spielfeld verlassen\n");
 
                         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                         alert.show();
@@ -150,7 +153,6 @@ public class MoveController extends AnimationTimer {
                         playfieldController.placeFood();
                     }
 
-                }
             }
         }
     }
