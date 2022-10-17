@@ -35,9 +35,9 @@ public class PlayfieldController {
     public static final int COL_NR = 20;
     @FXML
     public GridPane playfield = new GridPane();
+
     public String img;
 
-    MoveController move;
 
     Playfield pf = new Playfield();
     PlayfieldController playfieldController = this;

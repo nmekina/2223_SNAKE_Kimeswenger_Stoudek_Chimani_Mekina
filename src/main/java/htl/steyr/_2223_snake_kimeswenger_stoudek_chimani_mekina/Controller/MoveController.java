@@ -6,6 +6,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,9 +14,13 @@ import java.util.List;
 import java.util.Objects;
 
 public class MoveController extends AnimationTimer {
+    PlayfieldController pc = new PlayfieldController();
+
+    StartmenueController sc = new StartmenueController();
 
     public static int LENGTH = 3;
     static List<Position> snakePos = new ArrayList<>();
+    private int gamepoints=0;
 
     GridPane playfield;
     Playfield pf = new Playfield();
@@ -36,6 +41,7 @@ public class MoveController extends AnimationTimer {
     }
 
     public Position position;
+    Player pl = new Player();
 
 
     int i = 2;
@@ -76,7 +82,7 @@ public class MoveController extends AnimationTimer {
             }
             if (l - lastTick > 200000000 / speed) {
                 Pane pane = new Pane();
-                pane.setStyle(" -fx-background-color: lightgreen");
+                pane.setStyle(" -fx-background-color: #" + sc.pl.getColor());
                 if (playfield.getChildren().size() > (1 + LENGTH)) {
                     playfield.getChildren().remove(2);
 
@@ -119,10 +125,21 @@ public class MoveController extends AnimationTimer {
                             Alert alert = new Alert(Alert.AlertType.ERROR);
                             alert.setTitle("Fehler ");
                             alert.setHeaderText(null);
-                            alert.setContentText("Eingenen Körper beruehrt\n");
+                            alert.setContentText("Eingenen Körper beruehrt\n" +
+                                    "Deine Punkteanzahl:"+gamepoints);
 
                             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                             alert.show();
+                            if (gamepoints>=pl.getHighscore()){
+                                sc.pl.setHighscore(gamepoints);
+                                sc.pl.setGames(sc.pl.getGames()+1);
+                                try {
+                                    sc.addnewplayer(sc.pl);
+                                } catch (Exception e) {
+                                    throw new RuntimeException(e);
+                                }
+                            }
+
 
                         }
                     }
@@ -135,11 +152,22 @@ public class MoveController extends AnimationTimer {
                         Alert alert = new Alert(Alert.AlertType.ERROR);
                         alert.setTitle("Fehler");
                         alert.setHeaderText(null);
-                        alert.setContentText("Spielfeld verlassen\n");
+                        alert.setContentText("Spielfeld verlassen\n" +
+                                "Deine Punkteanzahl:"+gamepoints);
 
                         alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
                         alert.show();
+                        if (gamepoints>=pl.getHighscore()){
+                            sc.pl.setHighscore(gamepoints);
+                            sc.pl.setGames(sc.pl.getGames()+1);
+                            try {
+                                sc.addnewplayer(sc.pl);
+                            } catch (Exception e) {
+                                throw new RuntimeException(e);
+                            }
+                        }
                         ismoving = false;
+
                     }
 
 
@@ -148,6 +176,7 @@ public class MoveController extends AnimationTimer {
                             speed += 0.1;
                         }
                         LENGTH += 1;
+                        gamepoints++;
                         snakePos.add(new Position(snakePos.get(snakePos.size()-1).getX(), snakePos.get(snakePos.size()-1).getY()));
                         setHighscore(highscore += 1);
                         playfieldController.placeFood();
@@ -156,6 +185,8 @@ public class MoveController extends AnimationTimer {
             }
         }
     }
+
+
 }
 
 

@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Region;
+import javafx.scene.paint.Color;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -18,7 +19,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 public class StartmenueController {
+    public Player pl = new Player();
 
+    public String name;
     public TextField nameinput;
     public Button settingsbutton;
     public ColorPicker colourpicker;
@@ -81,16 +84,23 @@ public class StartmenueController {
             alert.getDialogPane().setMinHeight(Region.USE_PREF_SIZE);
             alert.showAndWait();
         }
-        Player p = new Player();
-        p.setName(nameinput.getText());
-        p.setGames(0);
-        p.setHighscore(0);
-
+        pl.setName(nameinput.getText());
+        pl.setColor(toRGBCode(colourpicker.getValue()));
 
 
         ChangeScene.ChangeSceneNow("playfield", settingsbutton);
 
 
+    }
+    private static String toRGBCode(Color color) {
+        String returner = color.toString();
+        returner = returner.substring(2);
+        if (returner.contains("fff")) {
+            returner = returner.substring(0, returner.length() - 2);
+        } else {
+            returner = returner.replace("ff", "");
+        }
+        return returner;
     }
 
     public void addnewplayer(Player p) throws Exception {
@@ -110,17 +120,20 @@ public class StartmenueController {
             objv = ja.getJSONObject(i);
             if (objv.getString("name").equals(p.getName())) {
                 b = true;
-            }else {
-                ja2.put(objv);
+                int games;
+                games= (int) objv.get("games");
+                games++;
+                objv.remove("games");
+                objv.put("games",games);
+                a = true;
             }
-            if (objv.getString("name").equals(p.getName())&&objv.getInt("highscore")!=p.getHighscore()) {
+            if (objv.getString("name").equals(p.getName())&&objv.getInt("highscore")<=p.getHighscore()) {
                 objv.remove("highscore");
                 objv.put("highscore",p.getHighscore());
                 a = true;
-                ja2.put(objv);
-
-
             }
+            ja2.put(objv);
+
 
         }
 
