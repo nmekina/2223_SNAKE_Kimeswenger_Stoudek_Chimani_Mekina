@@ -121,7 +121,7 @@ public class PlayfieldController {
                     schlange.setDirection(key);
                 }
             }else {
-                Stage stage = (Stage) highscoreLabel.getScene().getWindow();
+                Stage stage = (Stage) titleLabel.getScene().getWindow();
                 stage.close();
                 try {
                     ChangeScene.ChangeSceneNow("Startmenue", titleLabel);
