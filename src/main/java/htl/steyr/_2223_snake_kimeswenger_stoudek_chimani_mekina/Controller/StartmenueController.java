@@ -3,8 +3,12 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.ChangeScene;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.Player;
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
 import org.json.JSONArray;
@@ -16,7 +20,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class StartmenueController {
     public Player pl = new Player();
@@ -27,6 +30,7 @@ public class StartmenueController {
     public ColorPicker colourpicker;
     public ChoiceBox<String> whichFood;
     private static String png;
+    public AnchorPane startmenuepane;
 
     ArrayList<String> list = new ArrayList<>();
 
@@ -34,6 +38,7 @@ public class StartmenueController {
         return png;
     }
 
+    EventHandler eventHandler = new escEventhandler();
 
     public ChoiceBox<String> savedplayersc;
 
@@ -49,7 +54,7 @@ public class StartmenueController {
         }
         whichFood.getItems().add("apple");
         whichFood.getItems().add("banana");
-
+startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
 
     }
 
@@ -161,6 +166,19 @@ public class StartmenueController {
         return new String(Files.readAllBytes(Paths.get(file)));
     }
 
+    public class escEventhandler implements EventHandler<KeyEvent> {
+
+        @Override
+        public void handle(KeyEvent keyEvent) {
+            if ((keyEvent.getCode() == KeyCode.ESCAPE)) {
+                try {
+                    ChangeScene.ChangeSceneNow("Settings", settingsbutton);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 }
 

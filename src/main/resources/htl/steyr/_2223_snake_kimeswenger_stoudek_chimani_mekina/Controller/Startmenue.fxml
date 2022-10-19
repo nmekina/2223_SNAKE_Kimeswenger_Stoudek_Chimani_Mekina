@@ -7,7 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.StartmenueController">
+<AnchorPane fx:id="startmenuepane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="289.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.StartmenueController">
    <children>
       <Button fx:id="settingsbutton" layoutX="196.0" layoutY="255.0" mnemonicParsing="false" onAction="#submitbtn" prefHeight="25.0" prefWidth="61.0" text="submit" AnchorPane.leftAnchor="196.0" AnchorPane.rightAnchor="32.0" AnchorPane.topAnchor="255.0" />
       <ColorPicker fx:id="colourpicker" layoutX="35.0" layoutY="91.0" prefHeight="25.0" prefWidth="127.0" AnchorPane.leftAnchor="35.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="91.0" />

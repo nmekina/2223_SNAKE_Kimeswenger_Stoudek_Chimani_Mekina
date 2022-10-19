@@ -63,7 +63,7 @@ public class PlayfieldController {
      * ON/OFF kann separat eingestellt werden
      */
     public void initialize() {
-        File mediaFile = new File("musicfiles/kahootmusic.mp3");
+        File mediaFile = new File("musicfiles/song123.mp3");
         media = null;
         playfield.addEventHandler(MouseEvent.MOUSE_RELEASED, startEventhandler);
 
@@ -118,7 +118,6 @@ public class PlayfieldController {
     }
 
     public class MoveEventHandler implements EventHandler<KeyEvent> {
-
 
         @Override
         public void handle(KeyEvent keyEvent) {
