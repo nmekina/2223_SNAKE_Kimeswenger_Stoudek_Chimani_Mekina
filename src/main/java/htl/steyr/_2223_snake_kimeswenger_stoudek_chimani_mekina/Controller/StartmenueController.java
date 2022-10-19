@@ -7,7 +7,6 @@ import javafx.event.EventHandler;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Region;
 import javafx.scene.paint.Color;
@@ -56,6 +55,7 @@ public class StartmenueController {
         whichFood.getItems().add("apple");
         whichFood.getItems().add("banana");
         whichFood.getSelectionModel().selectFirst();
+        startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
         startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
 
     }

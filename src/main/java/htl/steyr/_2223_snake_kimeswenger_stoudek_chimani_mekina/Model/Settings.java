@@ -38,10 +38,5 @@ public class Settings {
         this.volume = volume;
     }
 
-    /**
-     * setzt die Schwierigkeit um eines schwierige
-     */
-    public void setdifficultyhigher() {
-        difficulty++;
-    }
+
 }

@@ -11,16 +11,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.sql.Statement;
 
 
 public class PlayfieldController {
@@ -30,28 +27,23 @@ public class PlayfieldController {
     public Label highscoreLabel;
     MediaPlayer mediaPlayer;
 
-
     Media media;
     Settings s = new Settings();
     public static final int ROW_NR = 25;
     public static final int COL_NR = 20;
     @FXML
     public GridPane playfield = new GridPane();
-
     public String img;
-
 
     Playfield pf = new Playfield();
     PlayfieldController playfieldController = this;
     int count = 0;
-    int highscorel=0;
+    int highscorel = 0;
 
     static StartmenueController smc = new StartmenueController();
 
     private EventHandler<MouseEvent> startEventhandler = new StartEventHandler();
     private EventHandler<KeyEvent> moveEventHandler = new MoveEventHandler();
-    int xPos;
-    int yPos;
 
 
     public PlayfieldController() {
@@ -90,7 +82,7 @@ public class PlayfieldController {
         int j = 0;
         if (count != 0) {
             for (int i = 0; i < playfield.getChildren().size(); i++) {
-                if(playfield.getChildren().get(i) instanceof ImageView) {
+                if (playfield.getChildren().get(i) instanceof ImageView) {
                     j = i;
                 }
             }
@@ -110,7 +102,6 @@ public class PlayfieldController {
 
     public class StartEventHandler implements EventHandler<MouseEvent> {
         int i = 0;
-
         int j = 0;
 
         @Override
@@ -126,7 +117,6 @@ public class PlayfieldController {
 
         @Override
         public void handle(KeyEvent keyEvent) {
-            System.out.println(keyEvent.getCode());
             Schlange schlange = Schlange.getSchlange();
             String key = keyEvent.getText().toUpperCase();
             if (!(keyEvent.getCode() == KeyCode.ESCAPE)) {

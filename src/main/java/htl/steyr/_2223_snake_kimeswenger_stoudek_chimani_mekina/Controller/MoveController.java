@@ -3,7 +3,6 @@ package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller;
 import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model.*;
 import javafx.animation.AnimationTimer;
 import javafx.scene.control.Alert;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.Region;
@@ -27,13 +26,10 @@ public class MoveController extends AnimationTimer {
 
     private String lastDir = "";
 
-    public int getHighscore() {
-        return highscore;
-    }
-
     public void setHighscore(int highscore) {
         this.highscore = highscore;
     }
+
     Player pl = new Player();
 
     public Position position;
@@ -43,9 +39,6 @@ public class MoveController extends AnimationTimer {
     Settings settings = new Settings();
     double speed = settings.getDifficulty();
     PlayfieldController playfieldController;
-
-
-
 
     MoveController(GridPane playfield, Position position, PlayfieldController playfieldController) {
         this.playfield = playfield;
@@ -96,7 +89,6 @@ public class MoveController extends AnimationTimer {
                     snakePos.get(i).setX(snakePos.get(i - 1).getX());
                     snakePos.get(i).setY(snakePos.get(i - 1).getY());
                 }
-
 
                 lastTick = l;
 
