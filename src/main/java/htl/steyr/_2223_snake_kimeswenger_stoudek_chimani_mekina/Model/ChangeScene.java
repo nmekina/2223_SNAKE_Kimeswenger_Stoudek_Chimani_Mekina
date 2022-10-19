@@ -4,7 +4,6 @@ import htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Controller.Start
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
 import java.io.IOException;

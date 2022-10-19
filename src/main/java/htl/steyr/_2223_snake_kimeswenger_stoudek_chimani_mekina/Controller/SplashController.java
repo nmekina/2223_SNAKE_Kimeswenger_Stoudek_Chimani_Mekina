@@ -26,11 +26,12 @@ public class SplashController {
     /**
      * Image des Splash wird gesetzt
      */
-    public void initialize(){
+    public void initialize() {
         Image image = new Image("https://static.vecteezy.com/system/resources/thumbnails/000/373/352/small/vksq_7pzq_170804.jpg");
         view.setImage(image);
-       splash();
+        splash();
     }
+
 
     /**
      * Splashscreen wird aufgerufen und bleibt fuer 2 Sekunden

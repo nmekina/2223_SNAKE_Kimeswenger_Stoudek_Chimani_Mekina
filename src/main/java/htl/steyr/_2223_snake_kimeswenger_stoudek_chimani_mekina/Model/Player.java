@@ -1,7 +1,5 @@
 package htl.steyr._2223_snake_kimeswenger_stoudek_chimani_mekina.Model;
 
-import javafx.scene.paint.Color;
-
 /**
  * Klasse für einen Spieler
  * name => Name des Spielers
@@ -10,7 +8,7 @@ import javafx.scene.paint.Color;
  */
 public class Player {
     public static String name;
-    public static Integer highscore=0;
+    public static Integer highscore = 0;
 
     public static String getColor() {
         return color;
@@ -22,12 +20,11 @@ public class Player {
 
     private static String color;
 
-
-
-    public static Integer games=0;
+    public static Integer games = 0;
 
     /**
      * getter und setter für die obrigen Attribute
+     *
      * @return
      */
     public String getName() {
