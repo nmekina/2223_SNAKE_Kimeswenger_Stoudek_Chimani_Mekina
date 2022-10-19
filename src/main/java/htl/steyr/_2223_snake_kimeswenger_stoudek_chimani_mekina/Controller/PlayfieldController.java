@@ -30,6 +30,7 @@ public class PlayfieldController {
     public Label highscoreLabel;
     MediaPlayer mediaPlayer;
 
+
     Media media;
     Settings s = new Settings();
     public static final int ROW_NR = 25;
@@ -43,6 +44,7 @@ public class PlayfieldController {
     Playfield pf = new Playfield();
     PlayfieldController playfieldController = this;
     int count = 0;
+    int highscorel=0;
 
     static StartmenueController smc = new StartmenueController();
 
@@ -94,6 +96,9 @@ public class PlayfieldController {
             }
             playfield.getChildren().remove(j);
         }
+
+        highscoreLabel.setText(String.valueOf(highscorel));
+        highscorel++;
 
         Position position = pf.randomFood();
         img = smc.getWhichFood();
