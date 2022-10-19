@@ -92,23 +92,41 @@ public class SettingsController {
         rb_music_on.setSelected(true);
     }
 
+    /**
+     * @param event
+     * @throws IOException
+     * schaltet auf Highscore.fxml um
+     */
     @FXML
     void btn_highscore_click(ActionEvent event) throws IOException {
         save();
         ChangeScene.ChangeSceneNow("Highscore", btn_highscore);
     }
 
+
+    /**
+     * @param event
+     * @throws IOException
+     * schaltet auf Startmenue.fxml um
+     */
     @FXML
     void btn_save_click(ActionEvent event) throws IOException {
         save();
         ChangeScene.ChangeSceneNow("Startmenue", btn_save);
     }
 
+    /**
+     * speichert difficulty, Musik und volume
+     */
     private void save() {
         savedifficulty();
         savemusic();
         savevolume();
     }
+
+    /**
+     * speichert difficulty
+     */
 
     private void savedifficulty() {
         RadioButton selecteddifficulty = (RadioButton) rb_difficulty.getSelectedToggle();
@@ -116,11 +134,18 @@ public class SettingsController {
         settings.setDifficulty(difficultyValue);
     }
 
+    /**
+     * speichert Musik
+     */
     private void savemusic() {
         RadioButton selectedmusic = (RadioButton) rb_music.getSelectedToggle();
         String musicValue = selectedmusic.getText();
         settings.setMusic(!musicValue.equals("off"));
     }
+
+    /**
+     * speichert die Lautstaerke der Musik
+     */
 
     private void savevolume() {
         Float sliderValue = Float.valueOf(String.valueOf(slider_volume.getValue()));

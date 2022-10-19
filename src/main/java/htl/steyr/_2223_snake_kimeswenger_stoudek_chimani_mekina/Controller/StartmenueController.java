@@ -44,7 +44,6 @@ public class StartmenueController {
 
     /**
      * @throws IOException
-     * @author skimeswe
      * change Food (apple, banana)
      */
     public void initialize() throws IOException {
@@ -71,11 +70,8 @@ startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
         }
     }
 
-
     public void submitbtn(ActionEvent actionEvent) throws Exception {
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
-        System.out.println("hier start");
-        System.out.println(png);
         if (savedplayersc.getSelectionModel().getSelectedItem() != null) {
             nameinput.appendText(savedplayersc.getSelectionModel().getSelectedItem());
 

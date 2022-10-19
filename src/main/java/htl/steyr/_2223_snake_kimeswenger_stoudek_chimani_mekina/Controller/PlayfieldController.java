@@ -58,8 +58,6 @@ public class PlayfieldController {
     }
 
     /**
-     * @author lstoudek
-     * @author skimeswe
      * In diesem initialize wird aus dem musicfiles Ordner ein Sound ausgewhält.
      * Mittles Lautstärkeregler kann der Sound angepasst werden.
      * ON/OFF kann separat eingestellt werden
@@ -82,7 +80,6 @@ public class PlayfieldController {
 
 
     /**
-     * @author skimeswew
      * diese Methode plaziert an zufälligen Stellen ein
      * zuvor ausgewähltes Futter
      */
@@ -107,7 +104,10 @@ public class PlayfieldController {
         count++;
     }
 
-
+    /**
+     * Bei Mausklick wird das Spiel gestartet und der
+     * MoveEventHandler wird auf das Spielfeld gelegt
+     */
     public class StartEventHandler implements EventHandler<MouseEvent> {
         int i = 0;
 
@@ -122,6 +122,11 @@ public class PlayfieldController {
         }
     }
 
+    /**
+     * behandelt jeden Tastendruck und prueft, ob es sich um WASD, ESC oder SPACE handelt
+     * Bei WASD und SPACE wird auf die Direction in der Schlange verwiesen, bei ESC wird die Scene
+     * geaendert in das Startmenue
+     */
     public class MoveEventHandler implements EventHandler<KeyEvent> {
 
         @Override

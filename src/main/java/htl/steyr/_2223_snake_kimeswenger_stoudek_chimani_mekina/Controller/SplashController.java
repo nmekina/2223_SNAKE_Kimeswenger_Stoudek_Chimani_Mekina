@@ -23,11 +23,18 @@ public class SplashController {
 
     private boolean splashonscreen = true;
 
+    /**
+     * Image des Splash wird gesetzt
+     */
     public void initialize(){
         Image image = new Image("https://static.vecteezy.com/system/resources/thumbnails/000/373/352/small/vksq_7pzq_170804.jpg");
         view.setImage(image);
        splash();
     }
+
+    /**
+     * Splashscreen wird aufgerufen und bleibt fuer 2 Sekunden
+     */
     private void splash() {
         new Thread() {
             @Override
@@ -48,7 +55,7 @@ public class SplashController {
                             Scene scene = new Scene(AnchorPane);
                             scene.setFill(Color.TRANSPARENT);
                             stage.initStyle(StageStyle.TRANSPARENT);
-                            stage.setTitle("Battleship");
+                            stage.setTitle("Splashscreen");
                             stage.setScene(scene);
                             stage.setMinHeight(400);
                             stage.setMinWidth(255);
