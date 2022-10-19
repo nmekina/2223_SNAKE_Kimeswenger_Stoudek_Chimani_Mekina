@@ -37,6 +37,8 @@ public class MoveController extends AnimationTimer {
     PlayfieldController playfieldController;
 
 
+
+
     MoveController(GridPane playfield, Position position, PlayfieldController playfieldController) {
         this.playfield = playfield;
         this.position = position;
