@@ -52,9 +52,11 @@ public class StartmenueController {
         for (String oneplayer : list) {
             savedplayersc.getItems().add(oneplayer);
         }
+        savedplayersc.getSelectionModel().selectLast();
         whichFood.getItems().add("apple");
         whichFood.getItems().add("banana");
-startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
+        whichFood.getSelectionModel().selectFirst();
+        startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
 
     }
 
@@ -97,6 +99,7 @@ startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
 
 
     }
+
     private static String toRGBCode(Color color) {
         String returner = color.toString();
         returner = returner.substring(2);
@@ -109,7 +112,6 @@ startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
     }
 
     public void addnewplayer(Player p) throws Exception {
-
 
 
         String file = "src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json";
@@ -126,15 +128,15 @@ startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
             if (objv.getString("name").equals(p.getName())) {
                 b = true;
                 int games;
-                games= (int) objv.get("games");
+                games = (int) objv.get("games");
                 games++;
                 objv.remove("games");
-                objv.put("games",games);
+                objv.put("games", games);
                 a = true;
             }
-            if (objv.getString("name").equals(p.getName())&&objv.getInt("highscore")<=p.getHighscore()) {
+            if (objv.getString("name").equals(p.getName()) && objv.getInt("highscore") <= p.getHighscore()) {
                 objv.remove("highscore");
-                objv.put("highscore",p.getHighscore());
+                objv.put("highscore", p.getHighscore());
                 a = true;
             }
             ja2.put(objv);
@@ -142,17 +144,17 @@ startmenuepane.addEventFilter(KeyEvent.KEY_PRESSED, eventHandler);
 
         }
 
-        if(a){
+        if (a) {
             FileWriter fw1 = new FileWriter(file);
             fw1.write(String.valueOf(ja2));
             fw1.close();
         }
 
 
-            JSONObject obj = new JSONObject();
-            obj.put("name", p.getName());
-            obj.put("games", p.getGames());
-            obj.put("highscore", p.getHighscore());
+        JSONObject obj = new JSONObject();
+        obj.put("name", p.getName());
+        obj.put("games", p.getGames());
+        obj.put("highscore", p.getHighscore());
         if (!b) {
             ja2.put(obj);
             FileWriter fw = new FileWriter(file);
