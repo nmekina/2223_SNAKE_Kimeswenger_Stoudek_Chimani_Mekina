@@ -11,6 +11,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.stage.Stage;
@@ -51,7 +52,8 @@ public class PlayfieldController {
     int yPos;
 
 
-    public PlayfieldController() {}
+    public PlayfieldController() {
+    }
 
     /**
      * @author lstoudek
@@ -78,19 +80,26 @@ public class PlayfieldController {
 
 
     /**
-     * @author skimeswe
+     * @author skimeswew
      * diese Methode plaziert an zufälligen Stellen ein
      * zuvor ausgewähltes Futter
      */
-    public GridPane placeFood() {
-        if (count > 0) {
-            playfield.getChildren().remove(0);
+    public void placeFood() {
+        int j = 0;
+        if (count != 0) {
+            for (int i = 0; i < playfield.getChildren().size(); i++) {
+                if(playfield.getChildren().get(i) instanceof ImageView) {
+                    j = i;
+                }
+            }
+            playfield.getChildren().remove(j);
         }
+
         Position position = pf.randomFood();
         img = smc.getWhichFood();
         Image image = new Image("File:images/" + img, 20, 20, false, false);
         playfield.add(new ImageView(image), position.getX(), position.getY());
-        return playfield;
+        count++;
     }
 
 
@@ -120,7 +129,7 @@ public class PlayfieldController {
                 if (key.equals("A") || key.equals("W") || key.equals("S") || key.equals("D") || key.equals(" ")) {
                     schlange.setDirection(key);
                 }
-            }else {
+            } else {
                 Stage stage = (Stage) titleLabel.getScene().getWindow();
                 stage.close();
                 try {
