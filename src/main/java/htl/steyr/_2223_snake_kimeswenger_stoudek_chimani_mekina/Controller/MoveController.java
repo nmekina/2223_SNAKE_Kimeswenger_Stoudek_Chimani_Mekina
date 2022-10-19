@@ -42,9 +42,8 @@ public class MoveController extends AnimationTimer {
 
 
     /**
-     *
-     * @param playfield Spielfeld
-     * @param position Startposition der Schlange
+     * @param playfield           Spielfeld
+     * @param position            Startposition der Schlange
      * @param playfieldController der Playfieldcontroller
      */
     MoveController(GridPane playfield, Position position, PlayfieldController playfieldController) {
@@ -76,7 +75,7 @@ public class MoveController extends AnimationTimer {
             if (lastTick == 0) {
                 lastTick = l;
             }
-            if (l - lastTick > 200000000 / speed) {
+            if (l - lastTick > (200000000 / speed)) {
                 Pane pane = new Pane();
                 pane.setStyle(" -fx-background-color: #" + sc.pl.getColor());
                 int z = 0;

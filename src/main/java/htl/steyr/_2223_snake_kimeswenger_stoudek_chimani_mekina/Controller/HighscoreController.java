@@ -33,7 +33,7 @@ public class HighscoreController {
 
     @FXML
     void btn_back_click(ActionEvent event) throws IOException {
-        ChangeScene.ChangeSceneNow("startmenue", btn_back);
+        ChangeScene.ChangeSceneNow("settings", btn_back);
     }
 
     /**
