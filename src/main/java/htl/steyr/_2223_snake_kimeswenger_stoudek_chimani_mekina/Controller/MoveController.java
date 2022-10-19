@@ -58,7 +58,6 @@ public class MoveController extends AnimationTimer {
     }
 
     /**
-     * @author cchimani, lstoudek
      * In dieser Methode werden die neuen Koordinaten der Schlage gesetzt,
      * Die Loss Condition werden überprüft
      * Die laenge der Schlage wird beim essen veraendert

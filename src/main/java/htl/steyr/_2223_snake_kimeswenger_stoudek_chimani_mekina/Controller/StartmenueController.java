@@ -44,6 +44,7 @@ public class StartmenueController {
     /**
      * @throws IOException
      * change Food (apple, banana)
+     * die Spieler werden aus der List geladen und ueber die ChoiceBox gesetzt
      */
     public void initialize() throws IOException {
         addSpieler();
@@ -59,6 +60,9 @@ public class StartmenueController {
 
     }
 
+    /**
+     * Alle gespeichert Spieler werden in eine Liste gespeichert
+     */
     public void addSpieler() throws IOException {
         File file = new File("src/main/java/htl/steyr/_2223_snake_kimeswenger_stoudek_chimani_mekina/Model/highscore.json");
         String content = new String(Files.readAllBytes(Paths.get(file.toURI())));
@@ -72,6 +76,12 @@ public class StartmenueController {
         }
     }
 
+    /**
+     * @param actionEvent
+     * @throws Exception
+     * Player Name und snake Colour werden gesetzt
+     * Das Spiel wird gestartet
+     */
     public void submitbtn(ActionEvent actionEvent) throws Exception {
         png = whichFood.getSelectionModel().getSelectedItem() + ".png";
         if (savedplayersc.getSelectionModel().getSelectedItem() != null) {
@@ -96,6 +106,11 @@ public class StartmenueController {
 
     }
 
+    /**
+     * Richtiges format der Farbe wird gesetzt
+     * @param color
+     * @return
+     */
     private static String toRGBCode(Color color) {
         String returner = color.toString();
         returner = returner.substring(2);
@@ -107,6 +122,12 @@ public class StartmenueController {
         return returner;
     }
 
+    /**
+     * Neuer Spieler wird json File gespeichert
+     * Aktive Spieler werden die Daten geaendert
+     * @param p
+     * @throws Exception
+     */
     public void addnewplayer(Player p) throws Exception {
 
 
@@ -160,10 +181,19 @@ public class StartmenueController {
 
     }
 
+    /**
+     *File als String
+     * @param file
+     * @return
+     * @throws Exception
+     */
     public static String readFileAsString(String file) throws Exception {
         return new String(Files.readAllBytes(Paths.get(file)));
     }
 
+    /**
+     * Bei Escape wird die Scene geaendert
+     */
     public class escEventhandler implements EventHandler<KeyEvent> {
 
         @Override
