@@ -4,4 +4,4 @@ my content:
 
 [Erfahren Sie mehr über mich](about_me.md)
 
-[Startmenue](startmenaue.md)
+[Startmenue](startmenue.md)
