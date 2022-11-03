@@ -1,8 +1,8 @@
 # My First Website
 
-my content:
+Snake Projekt:
 
-[Erfahren Sie mehr über mich](about_me.md)
+[Erfahren Sie mehr über die Entwickler](about_me.md)
 
 [Startmenue](startmenue.md)
 
