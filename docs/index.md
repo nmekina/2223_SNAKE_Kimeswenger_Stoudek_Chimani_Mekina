@@ -4,4 +4,4 @@ my content:
 
 [Erfahren Sie mehr über mich](about_me.md)
 
-[Projektstruktur und Projektinformationen](project.md)
+[Startmenue](startmenaue.md)
