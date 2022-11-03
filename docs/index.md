@@ -5,3 +5,5 @@ my content:
 [Erfahren Sie mehr über mich](about_me.md)
 
 [Startmenue](startmenue.md)
+
+[Das Spiel](ui.md)
