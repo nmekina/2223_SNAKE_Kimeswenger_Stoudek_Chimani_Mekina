@@ -7,3 +7,5 @@ Snake Projekt:
 [Startmenue](startmenue.md)
 
 [Das Spiel](ui.md)
+
+[Projektstruktur und -informationen](project.md)
