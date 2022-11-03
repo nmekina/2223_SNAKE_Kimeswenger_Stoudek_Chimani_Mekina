@@ -7,4 +7,5 @@
 <p> E-Mail:     nmekina@htl-steyr.ac.at </p>
 <p> geboren:    07.04.2005 </p>
 
-## Projekt:
+## Scrum Master:
+### Aufgaben:
