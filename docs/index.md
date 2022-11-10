@@ -9,3 +9,7 @@ Snake Projekt:
 [Das Spiel](ui.md)
 
 [Projektstruktur und -informationen](project.md)
+
+{% for element in site.data.students %}
+-{{element.firstname}} {{element.lastname}},{{element.class}}
+{%endfor%}
