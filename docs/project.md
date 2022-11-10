@@ -6,7 +6,7 @@
 
 
 <h3>Libraries:</h3>
-gson
+gson<br />
 javafx.media
 
 
