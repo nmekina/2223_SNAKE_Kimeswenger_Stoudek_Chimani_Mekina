@@ -9,6 +9,7 @@
 ### Scrum Master:
 In Trello Aufgaben für die Developer hinzufügen, definieren und dokumentieren!
 
+<br>
 
 ## Christian Chimani
 <p> Name: Christian Chimani </p>
@@ -20,6 +21,7 @@ In Trello Aufgaben für die Developer hinzufügen, definieren und dokumentieren!
 ### Developer:
 Zugewiesene Trello-Aufgaben durchführen!
 
+<br>
 
 ## Simon Kimeswenger
 <p> Name: Simon Kimeswenger </p>
@@ -31,6 +33,7 @@ Zugewiesene Trello-Aufgaben durchführen!
 ### Developer:
 Zugewiesene Trello-Aufgaben durchführen!
 
+<br>
 
 ## Leonhard Stoudek
 <p> Name: Leonhard Stoudek </p>
