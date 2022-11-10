@@ -2,7 +2,7 @@
 
 ## Snake Projekt:
 
-[Erklärung](startmenue.md)
+[Erklärung zum Starten des Spiels](startmenue.md)
 
 [Das Spiel](ui.md)
 
