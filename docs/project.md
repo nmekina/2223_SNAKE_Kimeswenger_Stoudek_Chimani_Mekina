@@ -5,7 +5,7 @@
 Das Prinzip unterteilt das Projekt in Model für Daten, in View für das Frontend und Controller für die Logik.<br />
 
 <img src="https://user-images.githubusercontent.com/95427526/199699615-0ad9db19-14c4-4ce8-8be0-e6a961b9415b.png" width="400"><br />
-Das Trelloboard verwenteten wir für die Aufteilung der Aufgaben untereinander.
+Das Trelloboard verwendeten wir für die Aufteilung der Aufgaben untereinander.
 
 
 <h3>Libraries:</h3>
