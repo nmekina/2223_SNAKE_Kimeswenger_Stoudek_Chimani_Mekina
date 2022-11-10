@@ -6,7 +6,7 @@
 
 [Projektstruktur und -informationen](project.md)
 
-[Richtlinien] (https://www.htl-steyr.ac.at/intern/wiki/doku.php?id=el-it:fsst:softwareentwicklung:programmierrichtlinien)
+[Richtlinien](https://www.htl-steyr.ac.at/intern/wiki/doku.php?id=el-it:fsst:softwareentwicklung:programmierrichtlinien)
 
 ### Entwickler:
 {% for element in site.data.student %}
