@@ -1,6 +1,4 @@
-# Snake
-
-## Snake Projekt:
+# Snake Projekt:
 
 [Erklärung zum Starten des Spiels](startmenue.md)
 
