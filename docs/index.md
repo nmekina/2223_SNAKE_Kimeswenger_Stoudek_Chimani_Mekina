@@ -11,5 +11,5 @@ Snake Projekt:
 [Projektstruktur und -informationen](project.md)
 
 {% for element in site.data.student %}
--{{element.firstname}} {{element.lastname}},{{element.class}}
-{%endfor%}
+- {{element.firstname}} {{element.lastname}},{{element.class}}
+{% endfor %}
