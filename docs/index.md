@@ -1,4 +1,4 @@
-# My First Website
+# Snake
 
 ## Snake Projekt:
 
