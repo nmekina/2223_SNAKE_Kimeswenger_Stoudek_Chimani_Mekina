@@ -15,7 +15,7 @@ In Trello Aufgaben für die Developer hinzufügen, definieren und dokumentieren!
 
 # Simon Kimeswenger
 
-## Über 3Tage zvü:
+## Über 3-Tage zvü:
 <p> Name: Simon Kimeswenger </p>
 <p> Anschrift:  Schloss Vaduz, 9490 Vaduz </p>
 <p> Telefon:    +43 677 12345678 </p>
