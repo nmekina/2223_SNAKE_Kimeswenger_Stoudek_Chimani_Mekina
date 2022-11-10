@@ -1,10 +1,8 @@
 # My First Website
 
-Snake Projekt:
+## Snake Projekt:
 
-[Erfahren Sie mehr über die Entwickler](about_us.md)
-
-[Startmenue](startmenue.md)
+[Erklärung](startmenue.md)
 
 [Das Spiel](ui.md)
 
@@ -13,3 +11,4 @@ Snake Projekt:
 {% for element in site.data.student %}
 - {{element.firstname}} {{element.lastname}}, {{element.class}}
 {% endfor %}
+[Erfahren Sie mehr über die Entwickler](about_us.md)
