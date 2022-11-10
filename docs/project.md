@@ -4,7 +4,7 @@
 <p><img src="https://user-images.githubusercontent.com/95427526/199695576-5941d618-55a5-470d-9760-d8954c6ad1c4.png" width="300"><br />
 Das Prinzip unterteilt das Projekt in Model für Daten, in View für das Frontend und Controller für die Logik.</p><br />
 
-<p><img src="https://user-images.githubusercontent.com/95427526/199699615-0ad9db19-14c4-4ce8-8be0-e6a961b9415b.png" width="400"><br />
+<p><img src="https://user-images.githubusercontent.com/95427526/199699615-0ad9db19-14c4-4ce8-8be0-e6a961b9415b.png" width="600"><br />
 Das Trelloboard verwendeten wir für die Aufteilung der Aufgaben untereinander.</p>
 
 
