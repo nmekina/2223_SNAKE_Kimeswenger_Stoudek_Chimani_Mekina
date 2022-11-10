@@ -8,6 +8,7 @@
 
 [Projektstruktur und -informationen](project.md)
 
+### Entwickler:
 {% for element in site.data.student %}
 - {{element.firstname}} {{element.lastname}}, {{element.class}}
 {% endfor %}
