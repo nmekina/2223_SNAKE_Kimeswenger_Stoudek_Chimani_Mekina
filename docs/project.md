@@ -1,5 +1,7 @@
 <h2>Projektstruktur und -informationen</h2>
-
+<style>
+p { border: 1px black }
+</style>
 <h3>Wir benutzten das Model-View-Controller Prinzip sowie ein Trelloboard und Github.</h3>
 <p><img src="https://user-images.githubusercontent.com/95427526/199695576-5941d618-55a5-470d-9760-d8954c6ad1c4.png" width="300"><br />
 Das Prinzip unterteilt das Projekt in Model für Daten, in View für das Frontend und Controller für die Logik.</p><br />
