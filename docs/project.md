@@ -7,7 +7,13 @@
 
 <h3>Libraries:</h3>
 gson<br />
-javafx.media
+javafx.media<br />
+json
+
+<h3>Languages:</h3>
+JavaFX<br />
+FXML<br />
+CSS
 
 
 
