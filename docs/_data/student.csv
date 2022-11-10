@@ -1,5 +1,5 @@
-"firstname","lastname","class"
-Christian, Chimani, insolvent
-Nico, Mekina, 4AHITN
-Simon, Kimeswenger, 4AHITN
-Leonhard, Stoudek, 4AHITN
+"firstname","lastname","class","task"
+Nico, Mekina, 4AHITN, Scrum Master
+Christian, Chimani, 4AHITN, Developer
+Simon, Kimeswenger, 4AHITN, Developer
+Leonhard, Stoudek, 4AHITN, Developer
